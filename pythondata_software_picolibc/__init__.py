@@ -1,8 +1,7 @@
 import os.path
 __dir__ = os.path.split(os.path.abspath(os.path.realpath(__file__)))[0]
 data_location = os.path.join(__dir__, "data")
-src = "https://git.llvm.org/git/compiler-rt.git/"
-
+src = "https://github.com/picolibc/picolibc"
 # Module version
 version_str = "0.0.post6206"
 version_tuple = (0, 0, 6206)
@@ -44,11 +43,10 @@ try:
 except ImportError:
     pass
 
-
 def data_file(f):
-    """Get absolute path for file inside pythondata_software_compiler_rt."""
+    """Get absolute path for file inside pythondata_software_picolibc."""
     fn = os.path.join(data_location, f)
     fn = os.path.abspath(fn)
     if not os.path.exists(fn):
-        raise IOError("File {f} doesn't exist in pythondata_software_compiler_rt".format(f))
+        raise IOError("File {f} doesn't exist in pythondata_software_picolibc".format(f))
     return fn

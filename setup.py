@@ -11,10 +11,10 @@ setuptools.setup(
     author="LiteX Authors",
     author_email="litex@googlegroups.com",
     description="""\
-Python module containing data files for LLVM Compiler RT Module software.""",
+Python module containing data files for Picolibc Module software.""",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/litex-hub/pythondata-software-compiler_rt",
+    url="https://github.com/litex-hub/pythondata-software-picolibc",
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: Apache Software License",
@@ -28,7 +28,7 @@ Python module containing data files for LLVM Compiler RT Module software.""",
     },
     include_package_data=True,
     project_urls={
-        "Bug Tracker": "https://github.com/litex-hub/pythondata-software-compiler_rt/issues",
-        "Source Code": "https://github.com/litex-hub/pythondata-software-compiler_rt",
+        "Bug Tracker": "https://github.com/litex-hub/pythondata-software-picolibc/issues",
+        "Source Code": "https://github.com/litex-hub/pythondata-software-picolibc",
     },
 )
