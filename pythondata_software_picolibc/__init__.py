@@ -4,40 +4,34 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "0.0.post21352"
-version_tuple = (0, 0, 21352)
+version_str = "0.0.post21353"
+version_tuple = (0, 0, 21353)
 try:
     from packaging.version import Version as V
-    pversion = V("0.0.post21352")
+    pversion = V("0.0.post21353")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "0.0.post21240"
-data_version_tuple = (0, 0, 21240)
+data_version_str = "0.0.post21241"
+data_version_tuple = (0, 0, 21241)
 try:
     from packaging.version import Version as V
-    pdata_version = V("0.0.post21240")
+    pdata_version = V("0.0.post21241")
 except ImportError:
     pass
-data_git_hash = "4b4a69f42f2e6fa5d6e44607adefe10f38d1b51a"
-data_git_describe = "v0.0-21240-g4b4a69f42"
+data_git_hash = "944aab1f4418e3e436e9cc70b0c904ada4e017d8"
+data_git_describe = "v0.0-21241-g944aab1f4"
 data_git_msg = """\
-commit 4b4a69f42f2e6fa5d6e44607adefe10f38d1b51a
-Author: Yasushi SHOJI <yashi@spacecubics.com>
-Date:   Wed Oct 6 13:29:33 2021 +0900
+commit 944aab1f4418e3e436e9cc70b0c904ada4e017d8
+Author: Keith Packard <keithp@keithp.com>
+Date:   Fri Oct 8 11:25:01 2021 -0700
 
-    meson.build: Remove unused POSIX_CONSOLE define from picolibc.h
+    scripts: GCC in testing has updated to 10.3.1
     
-    The definition POSIX_CONSOLE in picolibc.h is not used at all in the
-    tree.  In fact, it's never been used since it's introduced in
-    the commit 91b5c92e.
+    This means the clang builds need to change the path to libgcc
     
-    The build time option 'posix-console' _is_ in use for checking against
-    tinystdio and in newlib/libc/tinystdio/meson.build to enable building
-    posixiob.c.  The option itself is, of course, unchanged.
-    
-    Signed-off-by: Yasushi SHOJI <yashi@spacecubics.com>
+    Signed-off-by: Keith Packard <keithp@keithp.com>
 
 """
 
