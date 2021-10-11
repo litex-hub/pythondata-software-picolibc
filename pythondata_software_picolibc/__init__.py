@@ -4,34 +4,48 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "0.0.post21353"
-version_tuple = (0, 0, 21353)
+version_str = "0.0.post21369"
+version_tuple = (0, 0, 21369)
 try:
     from packaging.version import Version as V
-    pversion = V("0.0.post21353")
+    pversion = V("0.0.post21369")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "0.0.post21241"
-data_version_tuple = (0, 0, 21241)
+data_version_str = "0.0.post21257"
+data_version_tuple = (0, 0, 21257)
 try:
     from packaging.version import Version as V
-    pdata_version = V("0.0.post21241")
+    pdata_version = V("0.0.post21257")
 except ImportError:
     pass
-data_git_hash = "944aab1f4418e3e436e9cc70b0c904ada4e017d8"
-data_git_describe = "v0.0-21241-g944aab1f4"
+data_git_hash = "9463f4b62e703308c9be4a599bd5de63dd01492c"
+data_git_describe = "v0.0-21257-g9463f4b62"
 data_git_msg = """\
-commit 944aab1f4418e3e436e9cc70b0c904ada4e017d8
-Author: Keith Packard <keithp@keithp.com>
-Date:   Fri Oct 8 11:25:01 2021 -0700
+commit 9463f4b62e703308c9be4a599bd5de63dd01492c
+Author: Yasushi SHOJI <yashi@spacecubics.com>
+Date:   Sat Oct 9 05:55:47 2021 +0900
 
-    scripts: GCC in testing has updated to 10.3.1
+    gitignore: Remove config.h
     
-    This means the clang builds need to change the path to libgcc
+    This entry matches all "config.h" in the tree.  We actually have
+    "config.h" in the tree right now.
     
-    Signed-off-by: Keith Packard <keithp@keithp.com>
+      - newlib/libc/include/sys/config.h
+    
+    Modern tools, such as the Silver Searcher or Ripgrep, check .gitignore
+    and drop matched files and directories.  That means, we are hiding the
+    actual files.
+    
+    The .gitignore is inherited from Newlib and have many files from the
+    GNU Autotools era.  Removing config.h doesn't hurt picolibc
+    development.
+    
+    We can specifically ignore config.h in the root directory with
+    '/config.h' but decided to simply remove it.
+    
+    Signed-off-by: Yasushi SHOJI <yashi@spacecubics.com>
 
 """
 
