@@ -4,37 +4,34 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "0.0.post21371"
-version_tuple = (0, 0, 21371)
+version_str = "0.0.post21372"
+version_tuple = (0, 0, 21372)
 try:
     from packaging.version import Version as V
-    pversion = V("0.0.post21371")
+    pversion = V("0.0.post21372")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "0.0.post21259"
-data_version_tuple = (0, 0, 21259)
+data_version_str = "0.0.post21260"
+data_version_tuple = (0, 0, 21260)
 try:
     from packaging.version import Version as V
-    pdata_version = V("0.0.post21259")
+    pdata_version = V("0.0.post21260")
 except ImportError:
     pass
-data_git_hash = "7aa4c6803aca089dcbf8f9dfbb853b2691cfd520"
-data_git_describe = "v0.0-21259-g7aa4c6803"
+data_git_hash = "99c17dcf2e387ecd79a76ba409031a7ae119ce98"
+data_git_describe = "v0.0-21260-g99c17dcf2"
 data_git_msg = """\
-commit 7aa4c6803aca089dcbf8f9dfbb853b2691cfd520
-Author: Keith Packard <keithp@keithp.com>
-Date:   Mon Oct 11 09:27:53 2021 -0700
+commit 99c17dcf2e387ecd79a76ba409031a7ae119ce98
+Author: Yasushi SHOJI <yashi@spacecubics.com>
+Date:   Tue Oct 12 07:55:11 2021 +0900
 
-    test: Make sure strchr and strrchr handle weird params correctly
+    scripts: Fix unclosed string literal typo
     
-    strchr and strrchr are defined to take 'int' parameters for the needle
-    value (presumably due to legacy pre-ANSI C definitions). Internally,
-    they need to ignore everything above the low 8 bits. Make sure they do
-    by checking various combinations of values.
+    Need a closing '.
     
-    Signed-off-by: Keith Packard <keithp@keithp.com>
+    Signed-off-by: Yasushi SHOJI <yashi@spacecubics.com>
 
 """
 
