@@ -4,48 +4,37 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "0.0.post21369"
-version_tuple = (0, 0, 21369)
+version_str = "0.0.post21371"
+version_tuple = (0, 0, 21371)
 try:
     from packaging.version import Version as V
-    pversion = V("0.0.post21369")
+    pversion = V("0.0.post21371")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "0.0.post21257"
-data_version_tuple = (0, 0, 21257)
+data_version_str = "0.0.post21259"
+data_version_tuple = (0, 0, 21259)
 try:
     from packaging.version import Version as V
-    pdata_version = V("0.0.post21257")
+    pdata_version = V("0.0.post21259")
 except ImportError:
     pass
-data_git_hash = "9463f4b62e703308c9be4a599bd5de63dd01492c"
-data_git_describe = "v0.0-21257-g9463f4b62"
+data_git_hash = "7aa4c6803aca089dcbf8f9dfbb853b2691cfd520"
+data_git_describe = "v0.0-21259-g7aa4c6803"
 data_git_msg = """\
-commit 9463f4b62e703308c9be4a599bd5de63dd01492c
-Author: Yasushi SHOJI <yashi@spacecubics.com>
-Date:   Sat Oct 9 05:55:47 2021 +0900
+commit 7aa4c6803aca089dcbf8f9dfbb853b2691cfd520
+Author: Keith Packard <keithp@keithp.com>
+Date:   Mon Oct 11 09:27:53 2021 -0700
 
-    gitignore: Remove config.h
+    test: Make sure strchr and strrchr handle weird params correctly
     
-    This entry matches all "config.h" in the tree.  We actually have
-    "config.h" in the tree right now.
+    strchr and strrchr are defined to take 'int' parameters for the needle
+    value (presumably due to legacy pre-ANSI C definitions). Internally,
+    they need to ignore everything above the low 8 bits. Make sure they do
+    by checking various combinations of values.
     
-      - newlib/libc/include/sys/config.h
-    
-    Modern tools, such as the Silver Searcher or Ripgrep, check .gitignore
-    and drop matched files and directories.  That means, we are hiding the
-    actual files.
-    
-    The .gitignore is inherited from Newlib and have many files from the
-    GNU Autotools era.  Removing config.h doesn't hurt picolibc
-    development.
-    
-    We can specifically ignore config.h in the root directory with
-    '/config.h' but decided to simply remove it.
-    
-    Signed-off-by: Yasushi SHOJI <yashi@spacecubics.com>
+    Signed-off-by: Keith Packard <keithp@keithp.com>
 
 """
 
