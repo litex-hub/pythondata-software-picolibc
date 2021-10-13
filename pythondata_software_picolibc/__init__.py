@@ -4,45 +4,35 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "0.0.post21373"
-version_tuple = (0, 0, 21373)
+version_str = "0.0.post21380"
+version_tuple = (0, 0, 21380)
 try:
     from packaging.version import Version as V
-    pversion = V("0.0.post21373")
+    pversion = V("0.0.post21380")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "0.0.post21261"
-data_version_tuple = (0, 0, 21261)
+data_version_str = "0.0.post21268"
+data_version_tuple = (0, 0, 21268)
 try:
     from packaging.version import Version as V
-    pdata_version = V("0.0.post21261")
+    pdata_version = V("0.0.post21268")
 except ImportError:
     pass
-data_git_hash = "412a126f568f84e2723566e9065826a9bcbefd4a"
-data_git_describe = "v0.0-21261-g412a126f5"
+data_git_hash = "6ce563e9245c4992d2176374af9b93065636166e"
+data_git_describe = "v0.0-21268-g6ce563e92"
 data_git_msg = """\
-commit 412a126f568f84e2723566e9065826a9bcbefd4a
-Author: Yasushi SHOJI <yashi@spacecubics.com>
-Date:   Tue Oct 12 23:20:19 2021 +0900
+commit 6ce563e9245c4992d2176374af9b93065636166e
+Author: Keith Packard <keithp@keithp.com>
+Date:   Tue Oct 12 22:47:56 2021 -0700
 
-    scripts: Modernize meson usage in do-*-configure
+    scripts: Add powerpc64le cross-compile scripts
     
-    Use 'meson setup' style instead of the old 'meson <sourcedir>' which
-    predates meson version 0.42.
+    These use the linux-gnu compiler to build standalone libraries,
+    However, picolibc does not have support for bare-metal powerpc yet.
     
-    This also let us specify the builddir in the following form:
-    
-      ./scripts/do-riscv-configure builddir
-    
-    This might be handy when you want to build many arch in one go,
-    without mkdir-cd dance.
-    
-    This change keeps the backward compatibility and doesn't break the
-    current scripts.
-    
-    Signed-off-by: Yasushi SHOJI <yashi@spacecubics.com>
+    Signed-off-by: Keith Packard <keithp@keithp.com>
 
 """
 
