@@ -4,32 +4,43 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "0.0.post21372"
-version_tuple = (0, 0, 21372)
+version_str = "0.0.post21373"
+version_tuple = (0, 0, 21373)
 try:
     from packaging.version import Version as V
-    pversion = V("0.0.post21372")
+    pversion = V("0.0.post21373")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "0.0.post21260"
-data_version_tuple = (0, 0, 21260)
+data_version_str = "0.0.post21261"
+data_version_tuple = (0, 0, 21261)
 try:
     from packaging.version import Version as V
-    pdata_version = V("0.0.post21260")
+    pdata_version = V("0.0.post21261")
 except ImportError:
     pass
-data_git_hash = "99c17dcf2e387ecd79a76ba409031a7ae119ce98"
-data_git_describe = "v0.0-21260-g99c17dcf2"
+data_git_hash = "412a126f568f84e2723566e9065826a9bcbefd4a"
+data_git_describe = "v0.0-21261-g412a126f5"
 data_git_msg = """\
-commit 99c17dcf2e387ecd79a76ba409031a7ae119ce98
+commit 412a126f568f84e2723566e9065826a9bcbefd4a
 Author: Yasushi SHOJI <yashi@spacecubics.com>
-Date:   Tue Oct 12 07:55:11 2021 +0900
+Date:   Tue Oct 12 23:20:19 2021 +0900
 
-    scripts: Fix unclosed string literal typo
+    scripts: Modernize meson usage in do-*-configure
     
-    Need a closing '.
+    Use 'meson setup' style instead of the old 'meson <sourcedir>' which
+    predates meson version 0.42.
+    
+    This also let us specify the builddir in the following form:
+    
+      ./scripts/do-riscv-configure builddir
+    
+    This might be handy when you want to build many arch in one go,
+    without mkdir-cd dance.
+    
+    This change keeps the backward compatibility and doesn't break the
+    current scripts.
     
     Signed-off-by: Yasushi SHOJI <yashi@spacecubics.com>
 
