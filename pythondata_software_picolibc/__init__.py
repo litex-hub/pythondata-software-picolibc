@@ -4,33 +4,32 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "0.0.post21380"
-version_tuple = (0, 0, 21380)
+version_str = "0.0.post21383"
+version_tuple = (0, 0, 21383)
 try:
     from packaging.version import Version as V
-    pversion = V("0.0.post21380")
+    pversion = V("0.0.post21383")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "0.0.post21268"
-data_version_tuple = (0, 0, 21268)
+data_version_str = "0.0.post21271"
+data_version_tuple = (0, 0, 21271)
 try:
     from packaging.version import Version as V
-    pdata_version = V("0.0.post21268")
+    pdata_version = V("0.0.post21271")
 except ImportError:
     pass
-data_git_hash = "6ce563e9245c4992d2176374af9b93065636166e"
-data_git_describe = "v0.0-21268-g6ce563e92"
+data_git_hash = "1dacd304c2f0f5b5e8abe664d63cd31f68cd3ea6"
+data_git_describe = "v0.0-21271-g1dacd304c"
 data_git_msg = """\
-commit 6ce563e9245c4992d2176374af9b93065636166e
+commit 1dacd304c2f0f5b5e8abe664d63cd31f68cd3ea6
 Author: Keith Packard <keithp@keithp.com>
-Date:   Tue Oct 12 22:47:56 2021 -0700
+Date:   Thu Oct 14 10:21:14 2021 -0700
 
-    scripts: Add powerpc64le cross-compile scripts
+    newlib: Use PICOLIBC_TLS instead of NEWLIB_TLS
     
-    These use the linux-gnu compiler to build standalone libraries,
-    However, picolibc does not have support for bare-metal powerpc yet.
+    There's just one place in the tree using NEWLIB_TLS
     
     Signed-off-by: Keith Packard <keithp@keithp.com>
 
