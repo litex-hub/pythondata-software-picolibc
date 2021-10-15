@@ -4,32 +4,32 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "0.0.post21383"
-version_tuple = (0, 0, 21383)
+version_str = "0.0.post21392"
+version_tuple = (0, 0, 21392)
 try:
     from packaging.version import Version as V
-    pversion = V("0.0.post21383")
+    pversion = V("0.0.post21392")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "0.0.post21271"
-data_version_tuple = (0, 0, 21271)
+data_version_str = "0.0.post21280"
+data_version_tuple = (0, 0, 21280)
 try:
     from packaging.version import Version as V
-    pdata_version = V("0.0.post21271")
+    pdata_version = V("0.0.post21280")
 except ImportError:
     pass
-data_git_hash = "1dacd304c2f0f5b5e8abe664d63cd31f68cd3ea6"
-data_git_describe = "v0.0-21271-g1dacd304c"
+data_git_hash = "fa6eba747f3593fc75caa79b76d230fbce106bc6"
+data_git_describe = "v0.0-21280-gfa6eba747"
 data_git_msg = """\
-commit 1dacd304c2f0f5b5e8abe664d63cd31f68cd3ea6
+commit fa6eba747f3593fc75caa79b76d230fbce106bc6
 Author: Keith Packard <keithp@keithp.com>
-Date:   Thu Oct 14 10:21:14 2021 -0700
+Date:   Thu Oct 14 09:36:49 2021 -0700
 
-    newlib: Use PICOLIBC_TLS instead of NEWLIB_TLS
+    Rename amd64 stuff to x86_64
     
-    There's just one place in the tree using NEWLIB_TLS
+    This makes this architecture have a consistent name in the system.
     
     Signed-off-by: Keith Packard <keithp@keithp.com>
 
