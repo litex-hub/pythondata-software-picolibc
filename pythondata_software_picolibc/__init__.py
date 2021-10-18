@@ -4,34 +4,40 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "0.0.post21392"
-version_tuple = (0, 0, 21392)
+version_str = "0.0.post21394"
+version_tuple = (0, 0, 21394)
 try:
     from packaging.version import Version as V
-    pversion = V("0.0.post21392")
+    pversion = V("0.0.post21394")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "0.0.post21280"
-data_version_tuple = (0, 0, 21280)
+data_version_str = "0.0.post21282"
+data_version_tuple = (0, 0, 21282)
 try:
     from packaging.version import Version as V
-    pdata_version = V("0.0.post21280")
+    pdata_version = V("0.0.post21282")
 except ImportError:
     pass
-data_git_hash = "fa6eba747f3593fc75caa79b76d230fbce106bc6"
-data_git_describe = "v0.0-21280-gfa6eba747"
+data_git_hash = "27e7610aae25917fbf54e7222a77af382558ac88"
+data_git_describe = "v0.0-21282-g27e7610aa"
 data_git_msg = """\
-commit fa6eba747f3593fc75caa79b76d230fbce106bc6
-Author: Keith Packard <keithp@keithp.com>
-Date:   Thu Oct 14 09:36:49 2021 -0700
+commit 27e7610aae25917fbf54e7222a77af382558ac88
+Author: Yasushi SHOJI <yashi@spacecubics.com>
+Date:   Sat Oct 16 00:18:30 2021 +0900
 
-    Rename amd64 stuff to x86_64
+    github/Dockerfile: Use packages.txt to have a list of packages
     
-    This makes this architecture have a consistent name in the system.
+    Having a list of packages in Dockerfile is something we all do.  But
+    it's not readable when we have multiple retries.  Extract the list to
+    a text file and copy it to the container before the build.  This is
+    much more readable and gives us a single list to change.
     
-    Signed-off-by: Keith Packard <keithp@keithp.com>
+    We don't really care about additional layer created by the COPY
+    instruction because we aren't shipping the docker image.
+    
+    Signed-off-by: Yasushi SHOJI <yashi@spacecubics.com>
 
 """
 
