@@ -4,35 +4,34 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "0.0.post21400"
-version_tuple = (0, 0, 21400)
+version_str = "0.0.post21408"
+version_tuple = (0, 0, 21408)
 try:
     from packaging.version import Version as V
-    pversion = V("0.0.post21400")
+    pversion = V("0.0.post21408")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "0.0.post21288"
-data_version_tuple = (0, 0, 21288)
+data_version_str = "0.0.post21296"
+data_version_tuple = (0, 0, 21296)
 try:
     from packaging.version import Version as V
-    pdata_version = V("0.0.post21288")
+    pdata_version = V("0.0.post21296")
 except ImportError:
     pass
-data_git_hash = "98160b3b9b8afe955765e14636de7286ff480d15"
-data_git_describe = "v0.0-21288-g98160b3b9"
+data_git_hash = "703aec6a83696097ec598cf21344243002b0e123"
+data_git_describe = "v0.0-21296-g703aec6a8"
 data_git_msg = """\
-commit 98160b3b9b8afe955765e14636de7286ff480d15
+commit 703aec6a83696097ec598cf21344243002b0e123
 Author: Keith Packard <keithp@keithp.com>
-Date:   Wed Oct 13 15:20:41 2021 -0700
+Date:   Mon Oct 18 12:09:18 2021 -0700
 
-    Avoid creating so many intermediate libraries
+    .github: Replace use of apt-key with file in trusted.gpg.d
     
-    Instead of creating an intermediate library for every subdirectory in
-    the tree, create lists of files that are grouped in the higher level
-    library. This simplifies things quite a bit and should make builds run
-    faster.
+    apt-key is deprecated and can be replaced by putting the new key in
+    /etc/apt/trusted.gpg.d instead. Do this by having wget write to that
+    file.
     
     Signed-off-by: Keith Packard <keithp@keithp.com>
 
