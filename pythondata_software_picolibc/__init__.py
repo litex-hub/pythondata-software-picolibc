@@ -4,36 +4,35 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "0.0.post21408"
-version_tuple = (0, 0, 21408)
+version_str = "0.0.post21409"
+version_tuple = (0, 0, 21409)
 try:
     from packaging.version import Version as V
-    pversion = V("0.0.post21408")
+    pversion = V("0.0.post21409")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "0.0.post21296"
-data_version_tuple = (0, 0, 21296)
+data_version_str = "0.0.post21297"
+data_version_tuple = (0, 0, 21297)
 try:
     from packaging.version import Version as V
-    pdata_version = V("0.0.post21296")
+    pdata_version = V("0.0.post21297")
 except ImportError:
     pass
-data_git_hash = "703aec6a83696097ec598cf21344243002b0e123"
-data_git_describe = "v0.0-21296-g703aec6a8"
+data_git_hash = "d381e5d8d89bdea9b900efbfa13afa04b20af113"
+data_git_describe = "v0.0-21297-gd381e5d8d"
 data_git_msg = """\
-commit 703aec6a83696097ec598cf21344243002b0e123
-Author: Keith Packard <keithp@keithp.com>
-Date:   Mon Oct 18 12:09:18 2021 -0700
+commit d381e5d8d89bdea9b900efbfa13afa04b20af113
+Author: Yasushi SHOJI <yashi@spacecubics.com>
+Date:   Wed Oct 20 23:13:00 2021 +0900
 
-    .github: Replace use of apt-key with file in trusted.gpg.d
+    github/workflows: Disable gha cache backend
     
-    apt-key is deprecated and can be replaced by putting the new key in
-    /etc/apt/trusted.gpg.d instead. Do this by having wget write to that
-    file.
+    I can't make this experimental GitHub Actions cache exporter backend
+    work reliably with build-push-action.  Disable it for now.
     
-    Signed-off-by: Keith Packard <keithp@keithp.com>
+    Signed-off-by: Yasushi SHOJI <yashi@spacecubics.com>
 
 """
 
