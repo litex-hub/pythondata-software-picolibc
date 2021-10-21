@@ -4,33 +4,51 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "0.0.post21409"
-version_tuple = (0, 0, 21409)
+version_str = "0.0.post21411"
+version_tuple = (0, 0, 21411)
 try:
     from packaging.version import Version as V
-    pversion = V("0.0.post21409")
+    pversion = V("0.0.post21411")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "0.0.post21297"
-data_version_tuple = (0, 0, 21297)
+data_version_str = "0.0.post21299"
+data_version_tuple = (0, 0, 21299)
 try:
     from packaging.version import Version as V
-    pdata_version = V("0.0.post21297")
+    pdata_version = V("0.0.post21299")
 except ImportError:
     pass
-data_git_hash = "d381e5d8d89bdea9b900efbfa13afa04b20af113"
-data_git_describe = "v0.0-21297-gd381e5d8d"
+data_git_hash = "65c6534b82332f2c969882b960756410bda1474f"
+data_git_describe = "v0.0-21299-g65c6534b8"
 data_git_msg = """\
-commit d381e5d8d89bdea9b900efbfa13afa04b20af113
+commit 65c6534b82332f2c969882b960756410bda1474f
 Author: Yasushi SHOJI <yashi@spacecubics.com>
-Date:   Wed Oct 20 23:13:00 2021 +0900
+Date:   Wed Oct 20 19:57:17 2021 +0900
 
-    github/workflows: Disable gha cache backend
+    test: semihost: i386: Depends on bios.bin
     
-    I can't make this experimental GitHub Actions cache exporter backend
-    work reliably with build-push-action.  Disable it for now.
+    i386 and x86_64 semihost targets need "bios.bin" to run the tests with
+    QEMU but no tests depend on it.  bios.bin is "build_by_default: true"
+    so that you have to tell meson to build the default targets before
+    running tests, as you can see in .github/do-test:
+    
+        ninja && meson test
+    
+    Instead, make all tests depends on bios.bin, which is "bios_bin" in
+    meson, so that meson can figure out what to build when it runs tests.
+    Now, you can just do
+    
+        meson test -C builddir
+           or
+        meson test -C builddir malloc
+    
+    to build and run all tests without building the default targets
+    first.
+    
+    Other arches don't need bios to run, so the "bios_bin" is an empty
+    list except for Intel arches.
     
     Signed-off-by: Yasushi SHOJI <yashi@spacecubics.com>
 
