@@ -4,51 +4,36 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "0.0.post21411"
-version_tuple = (0, 0, 21411)
+version_str = "0.0.post21413"
+version_tuple = (0, 0, 21413)
 try:
     from packaging.version import Version as V
-    pversion = V("0.0.post21411")
+    pversion = V("0.0.post21413")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "0.0.post21299"
-data_version_tuple = (0, 0, 21299)
+data_version_str = "0.0.post21301"
+data_version_tuple = (0, 0, 21301)
 try:
     from packaging.version import Version as V
-    pdata_version = V("0.0.post21299")
+    pdata_version = V("0.0.post21301")
 except ImportError:
     pass
-data_git_hash = "65c6534b82332f2c969882b960756410bda1474f"
-data_git_describe = "v0.0-21299-g65c6534b8"
+data_git_hash = "2bd4d764deb542e4a8650b60cb250870b0a4f4e7"
+data_git_describe = "v0.0-21301-g2bd4d764d"
 data_git_msg = """\
-commit 65c6534b82332f2c969882b960756410bda1474f
+commit 2bd4d764deb542e4a8650b60cb250870b0a4f4e7
 Author: Yasushi SHOJI <yashi@spacecubics.com>
-Date:   Wed Oct 20 19:57:17 2021 +0900
+Date:   Thu Oct 21 11:31:24 2021 +0900
 
-    test: semihost: i386: Depends on bios.bin
+    meson.build: Move get_option() at conf_data.set()
     
-    i386 and x86_64 semihost targets need "bios.bin" to run the tests with
-    QEMU but no tests depend on it.  bios.bin is "build_by_default: true"
-    so that you have to tell meson to build the default targets before
-    running tests, as you can see in .github/do-test:
+    Directly call get_option() at conf_data.set() if an option is only
+    used to set the configuration data.  This reduces the number of
+    variables to worry about.
     
-        ninja && meson test
-    
-    Instead, make all tests depends on bios.bin, which is "bios_bin" in
-    meson, so that meson can figure out what to build when it runs tests.
-    Now, you can just do
-    
-        meson test -C builddir
-           or
-        meson test -C builddir malloc
-    
-    to build and run all tests without building the default targets
-    first.
-    
-    Other arches don't need bios to run, so the "bios_bin" is an empty
-    list except for Intel arches.
+    No functionality should have been changed.
     
     Signed-off-by: Yasushi SHOJI <yashi@spacecubics.com>
 
