@@ -4,38 +4,38 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "0.0.post21413"
-version_tuple = (0, 0, 21413)
+version_str = "0.0.post21414"
+version_tuple = (0, 0, 21414)
 try:
     from packaging.version import Version as V
-    pversion = V("0.0.post21413")
+    pversion = V("0.0.post21414")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "0.0.post21301"
-data_version_tuple = (0, 0, 21301)
+data_version_str = "0.0.post21302"
+data_version_tuple = (0, 0, 21302)
 try:
     from packaging.version import Version as V
-    pdata_version = V("0.0.post21301")
+    pdata_version = V("0.0.post21302")
 except ImportError:
     pass
-data_git_hash = "2bd4d764deb542e4a8650b60cb250870b0a4f4e7"
-data_git_describe = "v0.0-21301-g2bd4d764d"
+data_git_hash = "204d4a59723d3a256607741de0f134c3748e2a97"
+data_git_describe = "v0.0-21302-g204d4a597"
 data_git_msg = """\
-commit 2bd4d764deb542e4a8650b60cb250870b0a4f4e7
-Author: Yasushi SHOJI <yashi@spacecubics.com>
-Date:   Thu Oct 21 11:31:24 2021 +0900
+commit 204d4a59723d3a256607741de0f134c3748e2a97
+Author: Keith Packard <keithp@keithp.com>
+Date:   Fri Oct 22 08:58:07 2021 -0700
 
-    meson.build: Move get_option() at conf_data.set()
+    doc: Move comment about stdio long long support to paragraph below table
     
-    Directly call get_option() at conf_data.set() if an option is only
-    used to set the configuration data.  This reduces the number of
-    variables to worry about.
+    I can't figure out how to get a large text block into a table, so I've
+    moved the longer comment about long long support in printf to a
+    paragraph below the table of options.
     
-    No functionality should have been changed.
+    Closes #204.
     
-    Signed-off-by: Yasushi SHOJI <yashi@spacecubics.com>
+    Signed-off-by: Keith Packard <keithp@keithp.com>
 
 """
 
