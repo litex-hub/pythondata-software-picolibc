@@ -4,38 +4,44 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "0.0.post21414"
-version_tuple = (0, 0, 21414)
+version_str = "0.0.post21416"
+version_tuple = (0, 0, 21416)
 try:
     from packaging.version import Version as V
-    pversion = V("0.0.post21414")
+    pversion = V("0.0.post21416")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "0.0.post21302"
-data_version_tuple = (0, 0, 21302)
+data_version_str = "0.0.post21304"
+data_version_tuple = (0, 0, 21304)
 try:
     from packaging.version import Version as V
-    pdata_version = V("0.0.post21302")
+    pdata_version = V("0.0.post21304")
 except ImportError:
     pass
-data_git_hash = "204d4a59723d3a256607741de0f134c3748e2a97"
-data_git_describe = "v0.0-21302-g204d4a597"
+data_git_hash = "e8156c004e1b3ffdb046f46e5fb060bb85562f9a"
+data_git_describe = "v0.0-21304-ge8156c004"
 data_git_msg = """\
-commit 204d4a59723d3a256607741de0f134c3748e2a97
-Author: Keith Packard <keithp@keithp.com>
-Date:   Fri Oct 22 08:58:07 2021 -0700
+commit e8156c004e1b3ffdb046f46e5fb060bb85562f9a
+Author: Yasushi SHOJI <yashi@spacecubics.com>
+Date:   Thu Oct 21 14:54:41 2021 +0900
 
-    doc: Move comment about stdio long long support to paragraph below table
+    scripts: Replace riscv cpu_family with riscv32 or riscv64
     
-    I can't figure out how to get a large text block into a table, so I've
-    moved the longer comment about long long support in printf to a
-    paragraph below the table of options.
+    Meson doesn't know riscv as a cpu_family and generate the following
+    warning:
     
-    Closes #204.
+        WARNING: Unknown CPU family riscv, please report this at
+        https://github.com/mesonbuild/meson/issues/new
     
-    Signed-off-by: Keith Packard <keithp@keithp.com>
+    With the commit c8d139ebb, we now have the CPU family alias table
+    installed and can use the CPU families Meson knows.
+    
+    BTW, I think it's OK for users to use any values but we should use
+    what Meson knows.
+    
+    Signed-off-by: Yasushi SHOJI <yashi@spacecubics.com>
 
 """
 
