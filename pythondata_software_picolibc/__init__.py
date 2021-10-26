@@ -4,44 +4,34 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "0.0.post21416"
-version_tuple = (0, 0, 21416)
+version_str = "0.0.post21427"
+version_tuple = (0, 0, 21427)
 try:
     from packaging.version import Version as V
-    pversion = V("0.0.post21416")
+    pversion = V("0.0.post21427")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "0.0.post21304"
-data_version_tuple = (0, 0, 21304)
+data_version_str = "0.0.post21315"
+data_version_tuple = (0, 0, 21315)
 try:
     from packaging.version import Version as V
-    pdata_version = V("0.0.post21304")
+    pdata_version = V("0.0.post21315")
 except ImportError:
     pass
-data_git_hash = "e8156c004e1b3ffdb046f46e5fb060bb85562f9a"
-data_git_describe = "v0.0-21304-ge8156c004"
+data_git_hash = "028e4c9ba654e0c0dfd62f1e9139ff159fdd69a4"
+data_git_describe = "v0.0-21315-g028e4c9ba"
 data_git_msg = """\
-commit e8156c004e1b3ffdb046f46e5fb060bb85562f9a
-Author: Yasushi SHOJI <yashi@spacecubics.com>
-Date:   Thu Oct 21 14:54:41 2021 +0900
+commit 028e4c9ba654e0c0dfd62f1e9139ff159fdd69a4
+Author: Keith Packard <keithp@keithp.com>
+Date:   Mon Oct 25 14:40:56 2021 -0700
 
-    scripts: Replace riscv cpu_family with riscv32 or riscv64
+    scripts: Use canonical 'ppc64' cpu family for powerpc64le sample
     
-    Meson doesn't know riscv as a cpu_family and generate the following
-    warning:
+    ppc64 is what meson wants to see, so lets just use that directly.
     
-        WARNING: Unknown CPU family riscv, please report this at
-        https://github.com/mesonbuild/meson/issues/new
-    
-    With the commit c8d139ebb, we now have the CPU family alias table
-    installed and can use the CPU families Meson knows.
-    
-    BTW, I think it's OK for users to use any values but we should use
-    what Meson knows.
-    
-    Signed-off-by: Yasushi SHOJI <yashi@spacecubics.com>
+    Signed-off-by: Keith Packard <keithp@keithp.com>
 
 """
 
