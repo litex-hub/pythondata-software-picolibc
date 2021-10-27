@@ -4,34 +4,45 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "0.0.post21427"
-version_tuple = (0, 0, 21427)
+version_str = "0.0.post21429"
+version_tuple = (0, 0, 21429)
 try:
     from packaging.version import Version as V
-    pversion = V("0.0.post21427")
+    pversion = V("0.0.post21429")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "0.0.post21315"
-data_version_tuple = (0, 0, 21315)
+data_version_str = "0.0.post21317"
+data_version_tuple = (0, 0, 21317)
 try:
     from packaging.version import Version as V
-    pdata_version = V("0.0.post21315")
+    pdata_version = V("0.0.post21317")
 except ImportError:
     pass
-data_git_hash = "028e4c9ba654e0c0dfd62f1e9139ff159fdd69a4"
-data_git_describe = "v0.0-21315-g028e4c9ba"
+data_git_hash = "b9a0142cbf005c874f639fe48e0f57e0f09480b3"
+data_git_describe = "v0.0-21317-gb9a0142cb"
 data_git_msg = """\
-commit 028e4c9ba654e0c0dfd62f1e9139ff159fdd69a4
-Author: Keith Packard <keithp@keithp.com>
-Date:   Mon Oct 25 14:40:56 2021 -0700
+commit b9a0142cbf005c874f639fe48e0f57e0f09480b3
+Author: Yasushi SHOJI <yashi@spacecubics.com>
+Date:   Wed Oct 27 15:52:04 2021 +0900
 
-    scripts: Use canonical 'ppc64' cpu family for powerpc64le sample
+    libc: Remove #ifdef check before #undef
     
-    ppc64 is what meson wants to see, so lets just use that directly.
+    C Standards state that
     
-    Signed-off-by: Keith Packard <keithp@keithp.com>
+       It is ignored if the specified identifier is not currently defined
+       as a macro name.
+    
+    So we don't need to check with #ifdef before #undef.  It seems that
+    old compilers might error out, but we specify "c18" in the
+    meson.build, anyway.
+    
+    newlib/libc/reent/getreent.c has the line "#undef __getreent" but it's
+    not added by the recent commit c2c593afa60b64bff, so this commit
+    doesn't change it.
+    
+    Signed-off-by: Yasushi SHOJI <yashi@spacecubics.com>
 
 """
 
