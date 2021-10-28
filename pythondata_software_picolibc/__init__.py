@@ -4,45 +4,34 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "0.0.post21429"
-version_tuple = (0, 0, 21429)
+version_str = "0.0.post21432"
+version_tuple = (0, 0, 21432)
 try:
     from packaging.version import Version as V
-    pversion = V("0.0.post21429")
+    pversion = V("0.0.post21432")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "0.0.post21317"
-data_version_tuple = (0, 0, 21317)
+data_version_str = "0.0.post21320"
+data_version_tuple = (0, 0, 21320)
 try:
     from packaging.version import Version as V
-    pdata_version = V("0.0.post21317")
+    pdata_version = V("0.0.post21320")
 except ImportError:
     pass
-data_git_hash = "b9a0142cbf005c874f639fe48e0f57e0f09480b3"
-data_git_describe = "v0.0-21317-gb9a0142cb"
+data_git_hash = "daa2e04a3c65555ae45c68d6601a5f571e50eac2"
+data_git_describe = "v0.0-21320-gdaa2e04a3"
 data_git_msg = """\
-commit b9a0142cbf005c874f639fe48e0f57e0f09480b3
-Author: Yasushi SHOJI <yashi@spacecubics.com>
-Date:   Wed Oct 27 15:52:04 2021 +0900
+commit daa2e04a3c65555ae45c68d6601a5f571e50eac2
+Author: Keith Packard <keithp@keithp.com>
+Date:   Tue Oct 26 16:43:37 2021 -0700
 
-    libc: Remove #ifdef check before #undef
+    test: Add memset/bzero test
     
-    C Standards state that
+    Also tests ARM aeabi versions.
     
-       It is ignored if the specified identifier is not currently defined
-       as a macro name.
-    
-    So we don't need to check with #ifdef before #undef.  It seems that
-    old compilers might error out, but we specify "c18" in the
-    meson.build, anyway.
-    
-    newlib/libc/reent/getreent.c has the line "#undef __getreent" but it's
-    not added by the recent commit c2c593afa60b64bff, so this commit
-    doesn't change it.
-    
-    Signed-off-by: Yasushi SHOJI <yashi@spacecubics.com>
+    Signed-off-by: Keith Packard <keithp@keithp.com>
 
 """
 
