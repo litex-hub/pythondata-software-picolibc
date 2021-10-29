@@ -4,32 +4,34 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "0.0.post21432"
-version_tuple = (0, 0, 21432)
+version_str = "0.0.post21452"
+version_tuple = (0, 0, 21452)
 try:
     from packaging.version import Version as V
-    pversion = V("0.0.post21432")
+    pversion = V("0.0.post21452")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "0.0.post21320"
-data_version_tuple = (0, 0, 21320)
+data_version_str = "0.0.post21340"
+data_version_tuple = (0, 0, 21340)
 try:
     from packaging.version import Version as V
-    pdata_version = V("0.0.post21320")
+    pdata_version = V("0.0.post21340")
 except ImportError:
     pass
-data_git_hash = "daa2e04a3c65555ae45c68d6601a5f571e50eac2"
-data_git_describe = "v0.0-21320-gdaa2e04a3"
+data_git_hash = "59075484682d63f4589eb49afe59e89b27e89115"
+data_git_describe = "v0.0-21340-g590754846"
 data_git_msg = """\
-commit daa2e04a3c65555ae45c68d6601a5f571e50eac2
+commit 59075484682d63f4589eb49afe59e89b27e89115
 Author: Keith Packard <keithp@keithp.com>
-Date:   Tue Oct 26 16:43:37 2021 -0700
+Date:   Thu Oct 28 11:55:30 2021 -0700
 
-    test: Add memset/bzero test
+    Update COPYING.picolibc
     
-    Also tests ARM aeabi versions.
+    Add musl test suite
+    Rename arm-specific files
+    Add more POSIX bits
     
     Signed-off-by: Keith Packard <keithp@keithp.com>
 
