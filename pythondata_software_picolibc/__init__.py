@@ -4,46 +4,36 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "0.0.post21454"
-version_tuple = (0, 0, 21454)
+version_str = "0.0.post21498"
+version_tuple = (0, 0, 21498)
 try:
     from packaging.version import Version as V
-    pversion = V("0.0.post21454")
+    pversion = V("0.0.post21498")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "0.0.post21342"
-data_version_tuple = (0, 0, 21342)
+data_version_str = "0.0.post21386"
+data_version_tuple = (0, 0, 21386)
 try:
     from packaging.version import Version as V
-    pdata_version = V("0.0.post21342")
+    pdata_version = V("0.0.post21386")
 except ImportError:
     pass
-data_git_hash = "3fbd7c9979b6cfd073884c874f1b7df8701e1f65"
-data_git_describe = "v0.0-21342-g3fbd7c997"
+data_git_hash = "0e99e4a877ec4144c1a9d25f6eb01167812ff723"
+data_git_describe = "v0.0-21386-g0e99e4a87"
 data_git_msg = """\
-commit 3fbd7c9979b6cfd073884c874f1b7df8701e1f65
-Author: Yasushi SHOJI <yashi@spacecubics.com>
-Date:   Sat Oct 30 01:44:20 2021 +0900
+commit 0e99e4a877ec4144c1a9d25f6eb01167812ff723
+Author: Keith Packard <keithp@keithp.com>
+Date:   Mon Nov 1 23:39:05 2021 -0700
 
-    meson.build: Replace explicit warning level with the core option
+    .github: Clean up configuration options
     
-    We can specify a warning level in compiler independent way with the
-    option 'warning_level'.  This option can also be specified at the
-    command line with -Dwarning_level=.  The default value for
-    warning_level is 1.
+    Stop using -Dnewlib-tinystdio.
+    Remove some tabs
+    Test obsolete double code.
     
-    For GCC and Clang, warning level 1 and 2 are:
-    
-        level 1: -Wall -Winvalid-pch
-        level 2: -Wall -Winvalid-pch -Wextra
-    
-    So, it's the same as we used to have.
-    
-    ref: https://mesonbuild.com/Builtin-options.html#core-options
-    
-    Signed-off-by: Yasushi SHOJI <yashi@spacecubics.com>
+    Signed-off-by: Keith Packard <keithp@keithp.com>
 
 """
 
