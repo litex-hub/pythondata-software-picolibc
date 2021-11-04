@@ -4,34 +4,33 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "0.0.post21498"
-version_tuple = (0, 0, 21498)
+version_str = "0.0.post21508"
+version_tuple = (0, 0, 21508)
 try:
     from packaging.version import Version as V
-    pversion = V("0.0.post21498")
+    pversion = V("0.0.post21508")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "0.0.post21386"
-data_version_tuple = (0, 0, 21386)
+data_version_str = "0.0.post21396"
+data_version_tuple = (0, 0, 21396)
 try:
     from packaging.version import Version as V
-    pdata_version = V("0.0.post21386")
+    pdata_version = V("0.0.post21396")
 except ImportError:
     pass
-data_git_hash = "0e99e4a877ec4144c1a9d25f6eb01167812ff723"
-data_git_describe = "v0.0-21386-g0e99e4a87"
+data_git_hash = "c078c27985cdc8617096cd04f683f7c2e19f4b64"
+data_git_describe = "v0.0-21396-gc078c2798"
 data_git_msg = """\
-commit 0e99e4a877ec4144c1a9d25f6eb01167812ff723
+commit c078c27985cdc8617096cd04f683f7c2e19f4b64
 Author: Keith Packard <keithp@keithp.com>
-Date:   Mon Nov 1 23:39:05 2021 -0700
+Date:   Wed Nov 3 21:56:46 2021 -0700
 
-    .github: Clean up configuration options
+    xdr: Silence compiler warning about uninitialized variable
     
-    Stop using -Dnewlib-tinystdio.
-    Remove some tabs
-    Test obsolete double code.
+    'size' will be set in the ENCODE path, but the compiler can't tell, so
+    just initialize it always.
     
     Signed-off-by: Keith Packard <keithp@keithp.com>
 
