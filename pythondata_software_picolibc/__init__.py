@@ -4,33 +4,34 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "0.0.post21508"
-version_tuple = (0, 0, 21508)
+version_str = "0.0.post21530"
+version_tuple = (0, 0, 21530)
 try:
     from packaging.version import Version as V
-    pversion = V("0.0.post21508")
+    pversion = V("0.0.post21530")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "0.0.post21396"
-data_version_tuple = (0, 0, 21396)
+data_version_str = "0.0.post21418"
+data_version_tuple = (0, 0, 21418)
 try:
     from packaging.version import Version as V
-    pdata_version = V("0.0.post21396")
+    pdata_version = V("0.0.post21418")
 except ImportError:
     pass
-data_git_hash = "c078c27985cdc8617096cd04f683f7c2e19f4b64"
-data_git_describe = "v0.0-21396-gc078c2798"
+data_git_hash = "da94a0d3a28a1d5d75ca00b2de182f4f0db391d2"
+data_git_describe = "v0.0-21418-gda94a0d3a"
 data_git_msg = """\
-commit c078c27985cdc8617096cd04f683f7c2e19f4b64
+commit da94a0d3a28a1d5d75ca00b2de182f4f0db391d2
 Author: Keith Packard <keithp@keithp.com>
-Date:   Wed Nov 3 21:56:46 2021 -0700
+Date:   Mon Nov 15 22:02:20 2021 -0800
 
-    xdr: Silence compiler warning about uninitialized variable
+    math: Use current rounding mode directly for sqrt
     
-    'size' will be set in the ENCODE path, but the compiler can't tell, so
-    just initialize it always.
+    This queries the current rounding mode rather than using computations
+    to figure out what it is. For hardware without rounding modes, all of this
+    gets short-circuited.
     
     Signed-off-by: Keith Packard <keithp@keithp.com>
 
