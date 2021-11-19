@@ -4,32 +4,30 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "0.0.post21537"
-version_tuple = (0, 0, 21537)
+version_str = "0.0.post21539"
+version_tuple = (0, 0, 21539)
 try:
     from packaging.version import Version as V
-    pversion = V("0.0.post21537")
+    pversion = V("0.0.post21539")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "0.0.post21425"
-data_version_tuple = (0, 0, 21425)
+data_version_str = "0.0.post21427"
+data_version_tuple = (0, 0, 21427)
 try:
     from packaging.version import Version as V
-    pdata_version = V("0.0.post21425")
+    pdata_version = V("0.0.post21427")
 except ImportError:
     pass
-data_git_hash = "c5000518c8c258389673701a3ad2476217056e68"
-data_git_describe = "v0.0-21425-gc5000518c"
+data_git_hash = "0008930811ff6830aa1117068fa9a49fbe0176c4"
+data_git_describe = "v0.0-21427-g000893081"
 data_git_msg = """\
-commit c5000518c8c258389673701a3ad2476217056e68
+commit 0008930811ff6830aa1117068fa9a49fbe0176c4
 Author: Keith Packard <keithp@keithp.com>
-Date:   Thu Nov 18 22:11:28 2021 -0800
+Date:   Thu Nov 18 22:12:26 2021 -0800
 
-    Update COPYING.picolibc
-    
-    Some files in hello-world changed names.
+    Version 1.7.4
     
     Signed-off-by: Keith Packard <keithp@keithp.com>
 
