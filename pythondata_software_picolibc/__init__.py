@@ -4,33 +4,33 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "0.0.post21532"
-version_tuple = (0, 0, 21532)
+version_str = "0.0.post21534"
+version_tuple = (0, 0, 21534)
 try:
     from packaging.version import Version as V
-    pversion = V("0.0.post21532")
+    pversion = V("0.0.post21534")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "0.0.post21420"
-data_version_tuple = (0, 0, 21420)
+data_version_str = "0.0.post21422"
+data_version_tuple = (0, 0, 21422)
 try:
     from packaging.version import Version as V
-    pdata_version = V("0.0.post21420")
+    pdata_version = V("0.0.post21422")
 except ImportError:
     pass
-data_git_hash = "1fcf6015d45f5f0101e8a3cb64605c04430c7428"
-data_git_describe = "v0.0-21420-g1fcf6015d"
+data_git_hash = "654f5c0a5def9fa433efd0567a9395496dfaf103"
+data_git_describe = "v0.0-21422-g654f5c0a5"
 data_git_msg = """\
-commit 1fcf6015d45f5f0101e8a3cb64605c04430c7428
+commit 654f5c0a5def9fa433efd0567a9395496dfaf103
 Author: Keith Packard <keithp@keithp.com>
-Date:   Thu Nov 18 10:35:36 2021 -0800
+Date:   Thu Nov 18 17:32:23 2021 -0800
 
-    doc: Provide command line examples for linker script usage
+    Move Documentation in README.me above release notes
     
-    Explain how custom linker scripts can override picolibc built-in
-    linker scripts by using the -T option on the command line.
+    There are now a lot of release notes, which makes finding the set of
+    documentation links harder.
     
     Signed-off-by: Keith Packard <keithp@keithp.com>
 
