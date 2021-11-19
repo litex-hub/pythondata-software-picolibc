@@ -4,30 +4,32 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "0.0.post21536"
-version_tuple = (0, 0, 21536)
+version_str = "0.0.post21537"
+version_tuple = (0, 0, 21537)
 try:
     from packaging.version import Version as V
-    pversion = V("0.0.post21536")
+    pversion = V("0.0.post21537")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "0.0.post21424"
-data_version_tuple = (0, 0, 21424)
+data_version_str = "0.0.post21425"
+data_version_tuple = (0, 0, 21425)
 try:
     from packaging.version import Version as V
-    pdata_version = V("0.0.post21424")
+    pdata_version = V("0.0.post21425")
 except ImportError:
     pass
-data_git_hash = "7c2cdb9bb6810e7aaaaa49f874a60c8b7ed7e55c"
-data_git_describe = "v0.0-21424-g7c2cdb9bb"
+data_git_hash = "c5000518c8c258389673701a3ad2476217056e68"
+data_git_describe = "v0.0-21425-gc5000518c"
 data_git_msg = """\
-commit 7c2cdb9bb6810e7aaaaa49f874a60c8b7ed7e55c
+commit c5000518c8c258389673701a3ad2476217056e68
 Author: Keith Packard <keithp@keithp.com>
-Date:   Thu Nov 18 18:00:41 2021 -0800
+Date:   Thu Nov 18 22:11:28 2021 -0800
 
-    doc: Make linking.md match picolibc.ld
+    Update COPYING.picolibc
+    
+    Some files in hello-world changed names.
     
     Signed-off-by: Keith Packard <keithp@keithp.com>
 
