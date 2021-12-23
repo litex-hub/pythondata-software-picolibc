@@ -4,41 +4,43 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "0.0.post21539"
-version_tuple = (0, 0, 21539)
+version_str = "0.0.post21560"
+version_tuple = (0, 0, 21560)
 try:
     from packaging.version import Version as V
-    pversion = V("0.0.post21539")
+    pversion = V("0.0.post21560")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "0.0.post21427"
-data_version_tuple = (0, 0, 21427)
+data_version_str = "0.0.post21447"
+data_version_tuple = (0, 0, 21447)
 try:
     from packaging.version import Version as V
-    pdata_version = V("0.0.post21427")
+    pdata_version = V("0.0.post21447")
 except ImportError:
     pass
-data_git_hash = "0008930811ff6830aa1117068fa9a49fbe0176c4"
-data_git_describe = "v0.0-21427-g000893081"
+data_git_hash = "243731a9303374bad23fe2caf10dc1c236af5255"
+data_git_describe = "v0.0-21447-g243731a93"
 data_git_msg = """\
-commit 0008930811ff6830aa1117068fa9a49fbe0176c4
+commit 243731a9303374bad23fe2caf10dc1c236af5255
 Author: Keith Packard <keithp@keithp.com>
-Date:   Thu Nov 18 22:12:26 2021 -0800
+Date:   Mon Dec 20 14:52:38 2021 -0800
 
-    Version 1.7.4
+    test: Add tests for char/string put operations
+    
+    Test fputc, putc, putchar, puts, fputs and fwrite
     
     Signed-off-by: Keith Packard <keithp@keithp.com>
 
 """
 
 # Tool version info
-tool_version_str = "0.0.post112"
-tool_version_tuple = (0, 0, 112)
+tool_version_str = "0.0.post113"
+tool_version_tuple = (0, 0, 113)
 try:
     from packaging.version import Version as V
-    ptool_version = V("0.0.post112")
+    ptool_version = V("0.0.post113")
 except ImportError:
     pass
 
