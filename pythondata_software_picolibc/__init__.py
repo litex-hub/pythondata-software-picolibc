@@ -4,32 +4,33 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "1.7.4.post137"
-version_tuple = (1, 7, 4, 137)
+version_str = "1.7.4.post138"
+version_tuple = (1, 7, 4, 138)
 try:
     from packaging.version import Version as V
-    pversion = V("1.7.4.post137")
+    pversion = V("1.7.4.post138")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "1.7.4.post20"
-data_version_tuple = (1, 7, 4, 20)
+data_version_str = "1.7.4.post21"
+data_version_tuple = (1, 7, 4, 21)
 try:
     from packaging.version import Version as V
-    pdata_version = V("1.7.4.post20")
+    pdata_version = V("1.7.4.post21")
 except ImportError:
     pass
-data_git_hash = "243731a9303374bad23fe2caf10dc1c236af5255"
-data_git_describe = "1.7.4-20-g243731a93"
+data_git_hash = "e83996113acdaebe1429a2ea82d59c9807651a6c"
+data_git_describe = "1.7.4-21-ge83996113"
 data_git_msg = """\
-commit 243731a9303374bad23fe2caf10dc1c236af5255
+commit e83996113acdaebe1429a2ea82d59c9807651a6c
 Author: Keith Packard <keithp@keithp.com>
-Date:   Mon Dec 20 14:52:38 2021 -0800
+Date:   Thu Dec 23 17:06:29 2021 -0800
 
-    test: Add tests for char/string put operations
+    tinystdio: Pull in changes to the ryu code
     
-    Test fputc, putc, putchar, puts, fputs and fwrite
+    This brings the ryu code in tinystdio up to
+    commit 150d0c87830756d34e76c42f7f33f811d89903a8
     
     Signed-off-by: Keith Packard <keithp@keithp.com>
 
