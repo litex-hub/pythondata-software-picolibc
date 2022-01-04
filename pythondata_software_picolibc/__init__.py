@@ -4,33 +4,41 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "1.7.4.post138"
-version_tuple = (1, 7, 4, 138)
+version_str = "1.7.4.post142"
+version_tuple = (1, 7, 4, 142)
 try:
     from packaging.version import Version as V
-    pversion = V("1.7.4.post138")
+    pversion = V("1.7.4.post142")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "1.7.4.post21"
-data_version_tuple = (1, 7, 4, 21)
+data_version_str = "1.7.4.post25"
+data_version_tuple = (1, 7, 4, 25)
 try:
     from packaging.version import Version as V
-    pdata_version = V("1.7.4.post21")
+    pdata_version = V("1.7.4.post25")
 except ImportError:
     pass
-data_git_hash = "e83996113acdaebe1429a2ea82d59c9807651a6c"
-data_git_describe = "1.7.4-21-ge83996113"
+data_git_hash = "00a614f794c12e0fb5105a7960fbdbcc13536e50"
+data_git_describe = "1.7.4-25-g00a614f79"
 data_git_msg = """\
-commit e83996113acdaebe1429a2ea82d59c9807651a6c
+commit 00a614f794c12e0fb5105a7960fbdbcc13536e50
 Author: Keith Packard <keithp@keithp.com>
-Date:   Thu Dec 23 17:06:29 2021 -0800
+Date:   Mon Jan 3 13:44:45 2022 -0800
 
-    tinystdio: Pull in changes to the ryu code
+    Allow cross-compile files to override has_link_defsym and has_link_alias
     
-    This brings the ryu code in tinystdio up to
-    commit 150d0c87830756d34e76c42f7f33f811d89903a8
+    When building for rv32imacfdc with clang, we link with ld, which
+    requires an additional -melf32lriscv linker parameter. However, meson
+    refuses to pass that to the compiler when calling
+    compiler.has_link_argument to check for --defsym or --alias linker
+    parameters. This causes the options needed to link float-only or
+    int-only printf during testing to not be set, making the float-only
+    tests fail.
+    
+    Work around this by allowing the cross-compile file to set values for
+    these two variables and skip auto-detecting them.
     
     Signed-off-by: Keith Packard <keithp@keithp.com>
 
