@@ -4,40 +4,37 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "1.7.4.post143"
-version_tuple = (1, 7, 4, 143)
+version_str = "1.7.4.post144"
+version_tuple = (1, 7, 4, 144)
 try:
     from packaging.version import Version as V
-    pversion = V("1.7.4.post143")
+    pversion = V("1.7.4.post144")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "1.7.4.post26"
-data_version_tuple = (1, 7, 4, 26)
+data_version_str = "1.7.4.post27"
+data_version_tuple = (1, 7, 4, 27)
 try:
     from packaging.version import Version as V
-    pdata_version = V("1.7.4.post26")
+    pdata_version = V("1.7.4.post27")
 except ImportError:
     pass
-data_git_hash = "32a0dfa218c13b1fa5c02465d00d42abc8d520bb"
-data_git_describe = "1.7.4-26-g32a0dfa21"
+data_git_hash = "29d7282a37fca022c8ea3214f53f0dbcc5173b63"
+data_git_describe = "1.7.4-27-g29d7282a3"
 data_git_msg = """\
-commit 32a0dfa218c13b1fa5c02465d00d42abc8d520bb
-Author: Vincent Palatin <vpalatin@rivosinc.com>
-Date:   Mon Jan 3 18:41:01 2022 +0100
+commit 29d7282a37fca022c8ea3214f53f0dbcc5173b63
+Author: Keith Packard <keithp@keithp.com>
+Date:   Mon Jan 3 11:03:12 2022 -0800
 
-    Fix newlib version macros
+    Add double-underscore PICOLIBC version macros
     
-    Newlib is defining the `__NEWLIB__` and `__NEWLIB_MINOR__` macros to export
-    the library version.
-    The current meson build in picolibc is exporting `_NEWLIB__` and
-    `_NEWLIB_MINOR__` (with only one initial underscore).
-    Align the picolibc behavior on the newlib one.
+    When I initially created the meson build files, I mistakenly used only
+    a single leading underscore in all of the version macros. This adds
+    double leading underscore names, leaving the single underscore names
+    for anyone using them.
     
-    This fixes the build of LLVM libcxx which is using those macros to pick
-    the right headers in the following file:
-    https://github.com/llvm/llvm-project/blob/main/libcxx/include/__support/newlib/xlocale.h
+    Signed-off-by: Keith Packard <keithp@keithp.com>
 
 """
 
