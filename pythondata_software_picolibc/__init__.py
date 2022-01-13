@@ -4,11 +4,11 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "1.7.4.post147"
-version_tuple = (1, 7, 4, 147)
+version_str = "1.7.4.post148"
+version_tuple = (1, 7, 4, 148)
 try:
     from packaging.version import Version as V
-    pversion = V("1.7.4.post147")
+    pversion = V("1.7.4.post148")
 except ImportError:
     pass
 
@@ -39,11 +39,11 @@ Date:   Mon Jan 3 11:03:12 2022 -0800
 """
 
 # Tool version info
-tool_version_str = "0.0.post120"
-tool_version_tuple = (0, 0, 120)
+tool_version_str = "0.0.post121"
+tool_version_tuple = (0, 0, 121)
 try:
     from packaging.version import Version as V
-    ptool_version = V("0.0.post120")
+    ptool_version = V("0.0.post121")
 except ImportError:
     pass
 
