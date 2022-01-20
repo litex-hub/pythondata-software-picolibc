@@ -4,35 +4,33 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "1.7.4.post149"
-version_tuple = (1, 7, 4, 149)
+version_str = "1.7.4.post343"
+version_tuple = (1, 7, 4, 343)
 try:
     from packaging.version import Version as V
-    pversion = V("1.7.4.post149")
+    pversion = V("1.7.4.post343")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "1.7.4.post27"
-data_version_tuple = (1, 7, 4, 27)
+data_version_str = "1.7.4.post221"
+data_version_tuple = (1, 7, 4, 221)
 try:
     from packaging.version import Version as V
-    pdata_version = V("1.7.4.post27")
+    pdata_version = V("1.7.4.post221")
 except ImportError:
     pass
-data_git_hash = "29d7282a37fca022c8ea3214f53f0dbcc5173b63"
-data_git_describe = "1.7.4-27-g29d7282a3"
+data_git_hash = "ac37cb52519af888fe1255375c3ed95fe8ed4bcd"
+data_git_describe = "1.7.4-221-gac37cb525"
 data_git_msg = """\
-commit 29d7282a37fca022c8ea3214f53f0dbcc5173b63
+commit ac37cb52519af888fe1255375c3ed95fe8ed4bcd
 Author: Keith Packard <keithp@keithp.com>
-Date:   Mon Jan 3 11:03:12 2022 -0800
+Date:   Wed Jan 19 22:01:59 2022 -0800
 
-    Add double-underscore PICOLIBC version macros
+    libm: Make long double cast explicit in frexpl
     
-    When I initially created the meson build files, I mistakenly used only
-    a single leading underscore in all of the version macros. This adds
-    double leading underscore names, leaving the single underscore names
-    for anyone using them.
+    Not sure this wouldn't be better as a long double constant, but I
+    don't want to change the code.
     
     Signed-off-by: Keith Packard <keithp@keithp.com>
 
