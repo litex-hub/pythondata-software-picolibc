@@ -4,35 +4,45 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "1.7.4.post345"
-version_tuple = (1, 7, 4, 345)
+version_str = "1.7.4.post346"
+version_tuple = (1, 7, 4, 346)
 try:
     from packaging.version import Version as V
-    pversion = V("1.7.4.post345")
+    pversion = V("1.7.4.post346")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "1.7.4.post221"
-data_version_tuple = (1, 7, 4, 221)
+data_version_str = "1.7.4.post222"
+data_version_tuple = (1, 7, 4, 222)
 try:
     from packaging.version import Version as V
-    pdata_version = V("1.7.4.post221")
+    pdata_version = V("1.7.4.post222")
 except ImportError:
     pass
-data_git_hash = "ac37cb52519af888fe1255375c3ed95fe8ed4bcd"
-data_git_describe = "1.7.4-221-gac37cb525"
+data_git_hash = "a8ae5ad10df0b14c0b5ab34d7b67d25ede317bdb"
+data_git_describe = "1.7.4-222-ga8ae5ad10"
 data_git_msg = """\
-commit ac37cb52519af888fe1255375c3ed95fe8ed4bcd
-Author: Keith Packard <keithp@keithp.com>
-Date:   Wed Jan 19 22:01:59 2022 -0800
+commit a8ae5ad10df0b14c0b5ab34d7b67d25ede317bdb
+Author: Yasushi SHOJI <yashi@spacecubics.com>
+Date:   Wed Jan 26 14:53:56 2022 +0900
 
-    libm: Make long double cast explicit in frexpl
+    meson.build: Fix description keyword in configuration set()
     
-    Not sure this wouldn't be better as a long double constant, but I
-    don't want to change the code.
+    There are two typo for the keyword 'description' for config data set()
+    in meson.build.
     
-    Signed-off-by: Keith Packard <keithp@keithp.com>
+    Meson 0.61 doesn't warn about this but a post v0.61 with the
+    commit mesonbuild/meson/commit/574525673f6 will error out with:
+    
+       meson.build:737:10: ERROR: configuration_data.set got unknown
+       keyword arguments "descrption"
+    
+    This is reported by @tcal-x.
+    
+    Closes #244.
+    
+    Signed-off-by: Yasushi SHOJI <yashi@spacecubics.com>
 
 """
 
