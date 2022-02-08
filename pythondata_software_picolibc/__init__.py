@@ -4,45 +4,34 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "1.7.4.post346"
-version_tuple = (1, 7, 4, 346)
+version_str = "1.7.4.post349"
+version_tuple = (1, 7, 4, 349)
 try:
     from packaging.version import Version as V
-    pversion = V("1.7.4.post346")
+    pversion = V("1.7.4.post349")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "1.7.4.post222"
-data_version_tuple = (1, 7, 4, 222)
+data_version_str = "1.7.4.post225"
+data_version_tuple = (1, 7, 4, 225)
 try:
     from packaging.version import Version as V
-    pdata_version = V("1.7.4.post222")
+    pdata_version = V("1.7.4.post225")
 except ImportError:
     pass
-data_git_hash = "a8ae5ad10df0b14c0b5ab34d7b67d25ede317bdb"
-data_git_describe = "1.7.4-222-ga8ae5ad10"
+data_git_hash = "380d1af3dafcf25e705a25636c17e62b8b835b29"
+data_git_describe = "1.7.4-225-g380d1af3d"
 data_git_msg = """\
-commit a8ae5ad10df0b14c0b5ab34d7b67d25ede317bdb
-Author: Yasushi SHOJI <yashi@spacecubics.com>
-Date:   Wed Jan 26 14:53:56 2022 +0900
+commit 380d1af3dafcf25e705a25636c17e62b8b835b29
+Author: Keith Packard <keithp@keithp.com>
+Date:   Sun Feb 6 13:24:32 2022 -0800
 
-    meson.build: Fix description keyword in configuration set()
+    .github: Remove unneeded packages from each workflow
     
-    There are two typo for the keyword 'description' for config data set()
-    in meson.build.
+    This should make the cache files a bit more reasonably sized.
     
-    Meson 0.61 doesn't warn about this but a post v0.61 with the
-    commit mesonbuild/meson/commit/574525673f6 will error out with:
-    
-       meson.build:737:10: ERROR: configuration_data.set got unknown
-       keyword arguments "descrption"
-    
-    This is reported by @tcal-x.
-    
-    Closes #244.
-    
-    Signed-off-by: Yasushi SHOJI <yashi@spacecubics.com>
+    Signed-off-by: Keith Packard <keithp@keithp.com>
 
 """
 
