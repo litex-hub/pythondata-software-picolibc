@@ -4,32 +4,30 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "1.7.4.post360"
-version_tuple = (1, 7, 4, 360)
+version_str = "1.7.4.post363"
+version_tuple = (1, 7, 4, 363)
 try:
     from packaging.version import Version as V
-    pversion = V("1.7.4.post360")
+    pversion = V("1.7.4.post363")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "1.7.4.post234"
-data_version_tuple = (1, 7, 4, 234)
+data_version_str = "1.7.4.post237"
+data_version_tuple = (1, 7, 4, 237)
 try:
     from packaging.version import Version as V
-    pdata_version = V("1.7.4.post234")
+    pdata_version = V("1.7.4.post237")
 except ImportError:
     pass
-data_git_hash = "d79f1d606a71147ef8c1ed36594b5ed6a2e96122"
-data_git_describe = "1.7.4-234-gd79f1d606"
+data_git_hash = "6de1d3fd14f642ed624089a13f5dff7aa8cb4f23"
+data_git_describe = "1.7.4-237-g6de1d3fd1"
 data_git_msg = """\
-commit d79f1d606a71147ef8c1ed36594b5ed6a2e96122
-Author: Keith Packard <keithp@keithp.com>
-Date:   Thu Feb 10 15:53:40 2022 -0800
+commit 6de1d3fd14f642ed624089a13f5dff7aa8cb4f23
+Author: Johan de Claville Christiansen <johan@space-inventor.com>
+Date:   Sun Feb 13 17:16:25 2022 +0100
 
-    Update build status link to use new 'Linux' workflow
-    
-    Signed-off-by: Keith Packard <keithp@keithp.com>
+    meson: run_command set check to false on expr
 
 """
 
