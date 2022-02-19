@@ -4,30 +4,35 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "1.7.4.post363"
-version_tuple = (1, 7, 4, 363)
+version_str = "1.7.4.post493"
+version_tuple = (1, 7, 4, 493)
 try:
     from packaging.version import Version as V
-    pversion = V("1.7.4.post363")
+    pversion = V("1.7.4.post493")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "1.7.4.post237"
-data_version_tuple = (1, 7, 4, 237)
+data_version_str = "1.7.4.post367"
+data_version_tuple = (1, 7, 4, 367)
 try:
     from packaging.version import Version as V
-    pdata_version = V("1.7.4.post237")
+    pdata_version = V("1.7.4.post367")
 except ImportError:
     pass
-data_git_hash = "6de1d3fd14f642ed624089a13f5dff7aa8cb4f23"
-data_git_describe = "1.7.4-237-g6de1d3fd1"
+data_git_hash = "cea19312063fbe42d1388179d09e1102feb85918"
+data_git_describe = "1.7.4-367-gcea193120"
 data_git_msg = """\
-commit 6de1d3fd14f642ed624089a13f5dff7aa8cb4f23
-Author: Johan de Claville Christiansen <johan@space-inventor.com>
-Date:   Sun Feb 13 17:16:25 2022 +0100
+commit cea19312063fbe42d1388179d09e1102feb85918
+Author: Keith Packard <keithp@keithp.com>
+Date:   Sun Feb 13 23:28:20 2022 -0800
 
-    meson: run_command set check to false on expr
+    test: Ignore -Wstringop-truncation when building printf_scanf
+    
+    This test triggers a warning when using strncpy in valid, if slightly
+    unusual way.
+    
+    Signed-off-by: Keith Packard <keithp@keithp.com>
 
 """
 
