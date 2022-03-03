@@ -4,35 +4,32 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "1.7.4.post499"
-version_tuple = (1, 7, 4, 499)
+version_str = "1.7.4.post542"
+version_tuple = (1, 7, 4, 542)
 try:
     from packaging.version import Version as V
-    pversion = V("1.7.4.post499")
+    pversion = V("1.7.4.post542")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "1.7.4.post373"
-data_version_tuple = (1, 7, 4, 373)
+data_version_str = "1.7.4.post416"
+data_version_tuple = (1, 7, 4, 416)
 try:
     from packaging.version import Version as V
-    pdata_version = V("1.7.4.post373")
+    pdata_version = V("1.7.4.post416")
 except ImportError:
     pass
-data_git_hash = "8359908e586e838cc1562df36e784fce489c058d"
-data_git_describe = "1.7.4-373-g8359908e5"
+data_git_hash = "f4177d93c29ac06314e78d526d7e280e92a427ff"
+data_git_describe = "1.7.4-416-gf4177d93c"
 data_git_msg = """\
-commit 8359908e586e838cc1562df36e784fce489c058d
+commit f4177d93c29ac06314e78d526d7e280e92a427ff
 Author: Keith Packard <keithp@keithp.com>
-Date:   Tue Mar 1 17:32:24 2022 -0800
+Date:   Mon Feb 21 14:28:55 2022 -0800
 
-    Add '-Dbuild-type-subdir' to meson and '--picolibc-buildtype' to gcc
+    .github: Test clang-riscv version
     
-    These two options let picolibc be built with multiple configuration options and
-    installed in the same target directory. At application compile time, the build type
-    can be selected via the GCC --picolibc-buildtype option which selects which target
-    path to use for headers and binaries.
+    Now that this sample supports testing, run the tests.
     
     Signed-off-by: Keith Packard <keithp@keithp.com>
 
