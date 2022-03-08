@@ -4,32 +4,40 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "1.7.4.post542"
-version_tuple = (1, 7, 4, 542)
+version_str = "1.7.4.post583"
+version_tuple = (1, 7, 4, 583)
 try:
     from packaging.version import Version as V
-    pversion = V("1.7.4.post542")
+    pversion = V("1.7.4.post583")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "1.7.4.post416"
-data_version_tuple = (1, 7, 4, 416)
+data_version_str = "1.7.4.post457"
+data_version_tuple = (1, 7, 4, 457)
 try:
     from packaging.version import Version as V
-    pdata_version = V("1.7.4.post416")
+    pdata_version = V("1.7.4.post457")
 except ImportError:
     pass
-data_git_hash = "f4177d93c29ac06314e78d526d7e280e92a427ff"
-data_git_describe = "1.7.4-416-gf4177d93c"
+data_git_hash = "a268b62a21c9f9d2517ba5fcbbe00c6337ee9cd5"
+data_git_describe = "1.7.4-457-ga268b62a2"
 data_git_msg = """\
-commit f4177d93c29ac06314e78d526d7e280e92a427ff
+commit a268b62a21c9f9d2517ba5fcbbe00c6337ee9cd5
 Author: Keith Packard <keithp@keithp.com>
-Date:   Mon Feb 21 14:28:55 2022 -0800
+Date:   Mon Mar 7 14:46:50 2022 -0800
 
-    .github: Test clang-riscv version
+    math: Do nexttowardf nan exceptions in float instead of long double
     
-    Now that this sample supports testing, run the tests.
+    nexttowardf was performing the nan exception conversion using long
+    double, which only works correctly if the target exception handling is
+    the same for float and long double.
+    
+    Switch this function to doing the computation in floats instead, which
+    is a bit tricky because converting a sNaN long double to float returns
+    qNaN, but only raises INVALID if the target supports exceptions on
+    long double. Instead, manually convert a signaling long double to a
+    signaling float.
     
     Signed-off-by: Keith Packard <keithp@keithp.com>
 
