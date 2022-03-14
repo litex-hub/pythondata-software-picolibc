@@ -4,32 +4,30 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "1.7.4.post587"
-version_tuple = (1, 7, 4, 587)
+version_str = "1.7.5.post126"
+version_tuple = (1, 7, 5, 126)
 try:
     from packaging.version import Version as V
-    pversion = V("1.7.4.post587")
+    pversion = V("1.7.5.post126")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "1.7.4.post461"
-data_version_tuple = (1, 7, 4, 461)
+data_version_str = "1.7.5.post0"
+data_version_tuple = (1, 7, 5, 0)
 try:
     from packaging.version import Version as V
-    pdata_version = V("1.7.4.post461")
+    pdata_version = V("1.7.5.post0")
 except ImportError:
     pass
-data_git_hash = "1c996f43b509fed05bcd61c6eb049c42d57f99c8"
-data_git_describe = "1.7.4-461-g1c996f43b"
+data_git_hash = "f3981f6c16a7b690f1697c9a7f986964bc2e386f"
+data_git_describe = "1.7.5-0-gf3981f6c1"
 data_git_msg = """\
-commit 1c996f43b509fed05bcd61c6eb049c42d57f99c8
+commit f3981f6c16a7b690f1697c9a7f986964bc2e386f
 Author: Keith Packard <keithp@keithp.com>
-Date:   Mon Mar 7 20:49:30 2022 -0800
+Date:   Mon Mar 7 22:59:36 2022 -0800
 
-    Update COPYING.picolibc
-    
-    Merged newlib. Replaced ecvtbuf with ecvt_r et al in tinystdio.
+    Version 1.7.5
     
     Signed-off-by: Keith Packard <keithp@keithp.com>
 
