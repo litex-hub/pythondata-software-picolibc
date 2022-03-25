@@ -4,30 +4,35 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "1.7.5.post126"
-version_tuple = (1, 7, 5, 126)
+version_str = "1.7.5.post137"
+version_tuple = (1, 7, 5, 137)
 try:
     from packaging.version import Version as V
-    pversion = V("1.7.5.post126")
+    pversion = V("1.7.5.post137")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "1.7.5.post0"
-data_version_tuple = (1, 7, 5, 0)
+data_version_str = "1.7.5.post11"
+data_version_tuple = (1, 7, 5, 11)
 try:
     from packaging.version import Version as V
-    pdata_version = V("1.7.5.post0")
+    pdata_version = V("1.7.5.post11")
 except ImportError:
     pass
-data_git_hash = "f3981f6c16a7b690f1697c9a7f986964bc2e386f"
-data_git_describe = "1.7.5-0-gf3981f6c1"
+data_git_hash = "bad9f5b1b3d50cdcf80281b4f3a66a7232531f11"
+data_git_describe = "1.7.5-11-gbad9f5b1b"
 data_git_msg = """\
-commit f3981f6c16a7b690f1697c9a7f986964bc2e386f
+commit bad9f5b1b3d50cdcf80281b4f3a66a7232531f11
 Author: Keith Packard <keithp@keithp.com>
-Date:   Mon Mar 7 22:59:36 2022 -0800
+Date:   Wed Mar 23 13:23:22 2022 -0700
 
-    Version 1.7.5
+    arm/risc-v: Move FAST_FMA defines to installed machine/math.h files
+    
+    This makes the inline fma functions available for applications using
+    picolibc, not just for internal use. At the same time, add leading _
+    to the HAVE_FAST_FMA macros so that they don't potentially conflict
+    with application symbols.
     
     Signed-off-by: Keith Packard <keithp@keithp.com>
 
