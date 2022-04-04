@@ -4,39 +4,31 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "1.7.6.post130"
-version_tuple = (1, 7, 6, 130)
+version_str = "1.7.6.post133"
+version_tuple = (1, 7, 6, 133)
 try:
     from packaging.version import Version as V
-    pversion = V("1.7.6.post130")
+    pversion = V("1.7.6.post133")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "1.7.6.post4"
-data_version_tuple = (1, 7, 6, 4)
+data_version_str = "1.7.6.post7"
+data_version_tuple = (1, 7, 6, 7)
 try:
     from packaging.version import Version as V
-    pdata_version = V("1.7.6.post4")
+    pdata_version = V("1.7.6.post7")
 except ImportError:
     pass
-data_git_hash = "b3a735784c3f9fe45721f7caea88fccee16ea922"
-data_git_describe = "1.7.6-4-gb3a735784"
+data_git_hash = "a1bb47818d2f2b0f76d37b5fe1a795f3a8f6c794"
+data_git_describe = "1.7.6-7-ga1bb47818"
 data_git_msg = """\
-commit b3a735784c3f9fe45721f7caea88fccee16ea922
+commit a1bb47818d2f2b0f76d37b5fe1a795f3a8f6c794
+Merge: b1aae1165 816b10551
 Author: Keith Packard <keithp@keithp.com>
-Date:   Mon Mar 28 11:32:16 2022 -0700
+Date:   Mon Apr 4 10:12:52 2022 -0700
 
-    test/semihost: Add test for gettimeofday
-    
-    Make sure this function returns reasonable values:
-    
-     * After september 2020 (unix time 1,600,000,000)
-     * Values never decrease
-     * New values are within 1000 seconds of original value
-     * Eventually changes after no more than 1000 iterations
-    
-    Signed-off-by: Keith Packard <keithp@keithp.com>
+    Merge remote-tracking branch 'rdiez/patch-3'
 
 """
 
