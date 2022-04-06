@@ -4,31 +4,36 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "1.7.6.post133"
-version_tuple = (1, 7, 6, 133)
+version_str = "1.7.6.post136"
+version_tuple = (1, 7, 6, 136)
 try:
     from packaging.version import Version as V
-    pversion = V("1.7.6.post133")
+    pversion = V("1.7.6.post136")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "1.7.6.post7"
-data_version_tuple = (1, 7, 6, 7)
+data_version_str = "1.7.6.post10"
+data_version_tuple = (1, 7, 6, 10)
 try:
     from packaging.version import Version as V
-    pdata_version = V("1.7.6.post7")
+    pdata_version = V("1.7.6.post10")
 except ImportError:
     pass
-data_git_hash = "a1bb47818d2f2b0f76d37b5fe1a795f3a8f6c794"
-data_git_describe = "1.7.6-7-ga1bb47818"
+data_git_hash = "9120e6333f88f5bdefad013b24ad8ecfd4e3a5f1"
+data_git_describe = "1.7.6-10-g9120e6333"
 data_git_msg = """\
-commit a1bb47818d2f2b0f76d37b5fe1a795f3a8f6c794
-Merge: b1aae1165 816b10551
+commit 9120e6333f88f5bdefad013b24ad8ecfd4e3a5f1
 Author: Keith Packard <keithp@keithp.com>
-Date:   Mon Apr 4 10:12:52 2022 -0700
+Date:   Mon Apr 4 12:11:19 2022 -0700
 
-    Merge remote-tracking branch 'rdiez/patch-3'
+    Require newlib-multithread and newlib-retargetable-locking to match
+    
+    I'm still not sure why there are two options, but mixing values seems
+    like a bad idea as they both control whether the library performs
+    locking or not.
+    
+    Signed-off-by: Keith Packard <keithp@keithp.com>
 
 """
 
