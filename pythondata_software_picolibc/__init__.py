@@ -4,34 +4,34 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "1.7.6.post136"
-version_tuple = (1, 7, 6, 136)
+version_str = "1.7.6.post138"
+version_tuple = (1, 7, 6, 138)
 try:
     from packaging.version import Version as V
-    pversion = V("1.7.6.post136")
+    pversion = V("1.7.6.post138")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "1.7.6.post10"
-data_version_tuple = (1, 7, 6, 10)
+data_version_str = "1.7.6.post12"
+data_version_tuple = (1, 7, 6, 12)
 try:
     from packaging.version import Version as V
-    pdata_version = V("1.7.6.post10")
+    pdata_version = V("1.7.6.post12")
 except ImportError:
     pass
-data_git_hash = "9120e6333f88f5bdefad013b24ad8ecfd4e3a5f1"
-data_git_describe = "1.7.6-10-g9120e6333"
+data_git_hash = "48527f8f7eb543094a6d4c6f6571b639cd7a1453"
+data_git_describe = "1.7.6-12-g48527f8f7"
 data_git_msg = """\
-commit 9120e6333f88f5bdefad013b24ad8ecfd4e3a5f1
+commit 48527f8f7eb543094a6d4c6f6571b639cd7a1453
 Author: Keith Packard <keithp@keithp.com>
-Date:   Mon Apr 4 12:11:19 2022 -0700
+Date:   Thu Apr 7 13:16:36 2022 -0700
 
-    Require newlib-multithread and newlib-retargetable-locking to match
+    scripts: Re-add -nostdlib to c configurations for meson 0.53.2 support
     
-    I'm still not sure why there are two options, but mixing values seems
-    like a bad idea as they both control whether the library performs
-    locking or not.
+    Meson 0.53.2 doesn't use any cflags when doing basic compiler tests,
+    so we have to add -nostdlib to the compiler configuration it self or
+    early compiler tests while running meson fail.
     
     Signed-off-by: Keith Packard <keithp@keithp.com>
 
