@@ -4,36 +4,31 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "1.7.6.post138"
-version_tuple = (1, 7, 6, 138)
+version_str = "1.7.6.post141"
+version_tuple = (1, 7, 6, 141)
 try:
     from packaging.version import Version as V
-    pversion = V("1.7.6.post138")
+    pversion = V("1.7.6.post141")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "1.7.6.post12"
-data_version_tuple = (1, 7, 6, 12)
+data_version_str = "1.7.6.post15"
+data_version_tuple = (1, 7, 6, 15)
 try:
     from packaging.version import Version as V
-    pdata_version = V("1.7.6.post12")
+    pdata_version = V("1.7.6.post15")
 except ImportError:
     pass
-data_git_hash = "48527f8f7eb543094a6d4c6f6571b639cd7a1453"
-data_git_describe = "1.7.6-12-g48527f8f7"
+data_git_hash = "4068b85b9b48566caee79d66b1f9bac79f728a8c"
+data_git_describe = "1.7.6-15-g4068b85b9"
 data_git_msg = """\
-commit 48527f8f7eb543094a6d4c6f6571b639cd7a1453
+commit 4068b85b9b48566caee79d66b1f9bac79f728a8c
+Merge: 2ffcc0768 2efd2d18f
 Author: Keith Packard <keithp@keithp.com>
-Date:   Thu Apr 7 13:16:36 2022 -0700
+Date:   Tue Apr 12 10:10:53 2022 -0700
 
-    scripts: Re-add -nostdlib to c configurations for meson 0.53.2 support
-    
-    Meson 0.53.2 doesn't use any cflags when doing basic compiler tests,
-    so we have to add -nostdlib to the compiler configuration it self or
-    early compiler tests while running meson fail.
-    
-    Signed-off-by: Keith Packard <keithp@keithp.com>
+    Merge remote-tracking branch 'aykevl/fix-16-bit-int-shift'
 
 """
 
