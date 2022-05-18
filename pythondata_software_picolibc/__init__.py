@@ -4,50 +4,41 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "1.7.6.post142"
-version_tuple = (1, 7, 6, 142)
+version_str = "1.7.6.post184"
+version_tuple = (1, 7, 6, 184)
 try:
     from packaging.version import Version as V
-    pversion = V("1.7.6.post142")
+    pversion = V("1.7.6.post184")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "1.7.6.post16"
-data_version_tuple = (1, 7, 6, 16)
+data_version_str = "1.7.6.post56"
+data_version_tuple = (1, 7, 6, 56)
 try:
     from packaging.version import Version as V
-    pdata_version = V("1.7.6.post16")
+    pdata_version = V("1.7.6.post56")
 except ImportError:
     pass
-data_git_hash = "af27334b30bf9192a1984f4f1e6a661f18867e4f"
-data_git_describe = "1.7.6-16-gaf27334b3"
+data_git_hash = "c60f7e0c32f5cbd16757e1899fecd350ba168a78"
+data_git_describe = "1.7.6-56-gc60f7e0c3"
 data_git_msg = """\
-commit af27334b30bf9192a1984f4f1e6a661f18867e4f
+commit c60f7e0c32f5cbd16757e1899fecd350ba168a78
 Author: Keith Packard <keithp@keithp.com>
-Date:   Tue Apr 12 09:40:58 2022 -0700
+Date:   Tue May 17 16:03:10 2022 -0700
 
-    tinystdio: Ignore thousands separator flag
-    
-    POSIX defines a thousands separator flag for printf, ', which causes
-    the current locale thousands separator to be placed between groups of
-    digits to make them easier to read. As tinystdio doesn't have any
-    locale support, and as the C/POSIX locale has an empty thousands
-    separator, we can "support" this feature by simply ignoring this flag.
-    
-    Enabling this feature in a useful fashion will require either some
-    level of locale support or creating a custom API to control it.
+    .github: Add a cmake test
     
     Signed-off-by: Keith Packard <keithp@keithp.com>
 
 """
 
 # Tool version info
-tool_version_str = "0.0.post126"
-tool_version_tuple = (0, 0, 126)
+tool_version_str = "0.0.post128"
+tool_version_tuple = (0, 0, 128)
 try:
     from packaging.version import Version as V
-    ptool_version = V("0.0.post126")
+    ptool_version = V("0.0.post128")
 except ImportError:
     pass
 
