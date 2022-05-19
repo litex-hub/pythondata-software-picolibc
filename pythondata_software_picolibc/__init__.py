@@ -4,30 +4,33 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "1.7.6.post184"
-version_tuple = (1, 7, 6, 184)
+version_str = "1.7.6.post433"
+version_tuple = (1, 7, 6, 433)
 try:
     from packaging.version import Version as V
-    pversion = V("1.7.6.post184")
+    pversion = V("1.7.6.post433")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "1.7.6.post56"
-data_version_tuple = (1, 7, 6, 56)
+data_version_str = "1.7.6.post305"
+data_version_tuple = (1, 7, 6, 305)
 try:
     from packaging.version import Version as V
-    pdata_version = V("1.7.6.post56")
+    pdata_version = V("1.7.6.post305")
 except ImportError:
     pass
-data_git_hash = "c60f7e0c32f5cbd16757e1899fecd350ba168a78"
-data_git_describe = "1.7.6-56-gc60f7e0c3"
+data_git_hash = "f721a3514a3656ee0c7493ee17c88122dfbaa263"
+data_git_describe = "1.7.6-305-gf721a3514"
 data_git_msg = """\
-commit c60f7e0c32f5cbd16757e1899fecd350ba168a78
+commit f721a3514a3656ee0c7493ee17c88122dfbaa263
 Author: Keith Packard <keithp@keithp.com>
-Date:   Tue May 17 16:03:10 2022 -0700
+Date:   Wed May 18 14:47:37 2022 -0700
 
-    .github: Add a cmake test
+    semihost: Add stdint.h to semihost.h
+    
+    Now that stdint.h doesn't get included by other headers, we need to
+    include it explicitly where used.
     
     Signed-off-by: Keith Packard <keithp@keithp.com>
 
