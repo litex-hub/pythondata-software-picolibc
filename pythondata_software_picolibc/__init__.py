@@ -4,33 +4,30 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "1.7.6.post433"
-version_tuple = (1, 7, 6, 433)
+version_str = "1.7.7.post128"
+version_tuple = (1, 7, 7, 128)
 try:
     from packaging.version import Version as V
-    pversion = V("1.7.6.post433")
+    pversion = V("1.7.7.post128")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "1.7.6.post305"
-data_version_tuple = (1, 7, 6, 305)
+data_version_str = "1.7.7.post0"
+data_version_tuple = (1, 7, 7, 0)
 try:
     from packaging.version import Version as V
-    pdata_version = V("1.7.6.post305")
+    pdata_version = V("1.7.7.post0")
 except ImportError:
     pass
-data_git_hash = "f721a3514a3656ee0c7493ee17c88122dfbaa263"
-data_git_describe = "1.7.6-305-gf721a3514"
+data_git_hash = "f741d2340a443ef479548aefc12fa0c429095e4f"
+data_git_describe = "1.7.7-0-gf741d2340"
 data_git_msg = """\
-commit f721a3514a3656ee0c7493ee17c88122dfbaa263
+commit f741d2340a443ef479548aefc12fa0c429095e4f
 Author: Keith Packard <keithp@keithp.com>
-Date:   Wed May 18 14:47:37 2022 -0700
+Date:   Fri May 20 17:45:13 2022 -0700
 
-    semihost: Add stdint.h to semihost.h
-    
-    Now that stdint.h doesn't get included by other headers, we need to
-    include it explicitly where used.
+    Version 1.7.7
     
     Signed-off-by: Keith Packard <keithp@keithp.com>
 
