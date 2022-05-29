@@ -4,30 +4,32 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "1.7.7.post140"
-version_tuple = (1, 7, 7, 140)
+version_str = "1.7.7.post143"
+version_tuple = (1, 7, 7, 143)
 try:
     from packaging.version import Version as V
-    pversion = V("1.7.7.post140")
+    pversion = V("1.7.7.post143")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "1.7.7.post0"
-data_version_tuple = (1, 7, 7, 0)
+data_version_str = "1.7.7.post3"
+data_version_tuple = (1, 7, 7, 3)
 try:
     from packaging.version import Version as V
-    pdata_version = V("1.7.7.post0")
+    pdata_version = V("1.7.7.post3")
 except ImportError:
     pass
-data_git_hash = "f741d2340a443ef479548aefc12fa0c429095e4f"
-data_git_describe = "1.7.7-0-gf741d2340"
+data_git_hash = "419ac5cd358d7e12dd63e0b2c46cd03a366956ac"
+data_git_describe = "1.7.7-3-g419ac5cd3"
 data_git_msg = """\
-commit f741d2340a443ef479548aefc12fa0c429095e4f
+commit 419ac5cd358d7e12dd63e0b2c46cd03a366956ac
 Author: Keith Packard <keithp@keithp.com>
-Date:   Fri May 20 17:45:13 2022 -0700
+Date:   Mon May 23 21:37:50 2022 -0700
 
-    Version 1.7.7
+    testsuite/newlib.stdio: Make swprintf 'main' a modern function
+    
+    Add '(void)' parameters
     
     Signed-off-by: Keith Packard <keithp@keithp.com>
 
