@@ -4,34 +4,33 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "1.7.7.post145"
-version_tuple = (1, 7, 7, 145)
+version_str = "1.7.7.post146"
+version_tuple = (1, 7, 7, 146)
 try:
     from packaging.version import Version as V
-    pversion = V("1.7.7.post145")
+    pversion = V("1.7.7.post146")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "1.7.7.post3"
-data_version_tuple = (1, 7, 7, 3)
+data_version_str = "1.7.7.post4"
+data_version_tuple = (1, 7, 7, 4)
 try:
     from packaging.version import Version as V
-    pdata_version = V("1.7.7.post3")
+    pdata_version = V("1.7.7.post4")
 except ImportError:
     pass
-data_git_hash = "419ac5cd358d7e12dd63e0b2c46cd03a366956ac"
-data_git_describe = "1.7.7-3-g419ac5cd3"
+data_git_hash = "579710373351530f3614389cbb1dc1f3f2085b56"
+data_git_describe = "1.7.7-4-g579710373"
 data_git_msg = """\
-commit 419ac5cd358d7e12dd63e0b2c46cd03a366956ac
-Author: Keith Packard <keithp@keithp.com>
-Date:   Mon May 23 21:37:50 2022 -0700
+commit 579710373351530f3614389cbb1dc1f3f2085b56
+Author: Max Behensky <maxb@twinlanes.com>
+Date:   Thu Jun 2 16:49:04 2022 -0700
 
-    testsuite/newlib.stdio: Make swprintf 'main' a modern function
+    Fix issues with out of source build CMake install.
     
-    Add '(void)' parameters
-    
-    Signed-off-by: Keith Packard <keithp@keithp.com>
+    The picolibc.specs file lives in the build directory, not the source directory.
+    The picolibc.h file wasn't getting copied to the install include directory.
 
 """
 
