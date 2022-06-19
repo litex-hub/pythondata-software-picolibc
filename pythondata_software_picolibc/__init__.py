@@ -4,33 +4,35 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "1.7.7.post146"
-version_tuple = (1, 7, 7, 146)
+version_str = "1.7.7.post148"
+version_tuple = (1, 7, 7, 148)
 try:
     from packaging.version import Version as V
-    pversion = V("1.7.7.post146")
+    pversion = V("1.7.7.post148")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "1.7.7.post4"
-data_version_tuple = (1, 7, 7, 4)
+data_version_str = "1.7.7.post6"
+data_version_tuple = (1, 7, 7, 6)
 try:
     from packaging.version import Version as V
-    pdata_version = V("1.7.7.post4")
+    pdata_version = V("1.7.7.post6")
 except ImportError:
     pass
-data_git_hash = "579710373351530f3614389cbb1dc1f3f2085b56"
-data_git_describe = "1.7.7-4-g579710373"
+data_git_hash = "575808225cc3fa60e76a07e88e7862c77cf6842b"
+data_git_describe = "1.7.7-6-g575808225"
 data_git_msg = """\
-commit 579710373351530f3614389cbb1dc1f3f2085b56
-Author: Max Behensky <maxb@twinlanes.com>
-Date:   Thu Jun 2 16:49:04 2022 -0700
+commit 575808225cc3fa60e76a07e88e7862c77cf6842b
+Author: Keith Packard <keithp@keithp.com>
+Date:   Sun Jun 19 11:25:15 2022 -0700
 
-    Fix issues with out of source build CMake install.
+    Fix formatting in README.md
     
-    The picolibc.specs file lives in the build directory, not the source directory.
-    The picolibc.h file wasn't getting copied to the install include directory.
+    Use literal mode for a couple of prefixes both to make it clear that
+    it's code and to avoid interpreting the __ as formatting.
+    
+    Signed-off-by: Keith Packard <keithp@keithp.com>
 
 """
 
