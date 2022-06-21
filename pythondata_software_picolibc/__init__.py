@@ -4,33 +4,32 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "1.7.7.post148"
-version_tuple = (1, 7, 7, 148)
+version_str = "1.7.7.post150"
+version_tuple = (1, 7, 7, 150)
 try:
     from packaging.version import Version as V
-    pversion = V("1.7.7.post148")
+    pversion = V("1.7.7.post150")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "1.7.7.post6"
-data_version_tuple = (1, 7, 7, 6)
+data_version_str = "1.7.7.post8"
+data_version_tuple = (1, 7, 7, 8)
 try:
     from packaging.version import Version as V
-    pdata_version = V("1.7.7.post6")
+    pdata_version = V("1.7.7.post8")
 except ImportError:
     pass
-data_git_hash = "575808225cc3fa60e76a07e88e7862c77cf6842b"
-data_git_describe = "1.7.7-6-g575808225"
+data_git_hash = "7a3c2973a5cac20b01a9dd683198147d71547460"
+data_git_describe = "1.7.7-8-g7a3c2973a"
 data_git_msg = """\
-commit 575808225cc3fa60e76a07e88e7862c77cf6842b
+commit 7a3c2973a5cac20b01a9dd683198147d71547460
 Author: Keith Packard <keithp@keithp.com>
-Date:   Sun Jun 19 11:25:15 2022 -0700
+Date:   Sun Jun 19 11:31:52 2022 -0700
 
-    Fix formatting in README.md
+    .github: Test all available cmake configurations
     
-    Use literal mode for a couple of prefixes both to make it clear that
-    it's code and to avoid interpreting the __ as formatting.
+    Make sure the library is built correctly in all modes.
     
     Signed-off-by: Keith Packard <keithp@keithp.com>
 
