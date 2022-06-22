@@ -4,32 +4,33 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "1.7.7.post150"
-version_tuple = (1, 7, 7, 150)
+version_str = "1.7.7.post155"
+version_tuple = (1, 7, 7, 155)
 try:
     from packaging.version import Version as V
-    pversion = V("1.7.7.post150")
+    pversion = V("1.7.7.post155")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "1.7.7.post8"
-data_version_tuple = (1, 7, 7, 8)
+data_version_str = "1.7.7.post13"
+data_version_tuple = (1, 7, 7, 13)
 try:
     from packaging.version import Version as V
-    pdata_version = V("1.7.7.post8")
+    pdata_version = V("1.7.7.post13")
 except ImportError:
     pass
-data_git_hash = "7a3c2973a5cac20b01a9dd683198147d71547460"
-data_git_describe = "1.7.7-8-g7a3c2973a"
+data_git_hash = "bbcbb51c17bc9afbae9e1683ac4c7b3e740bf2c8"
+data_git_describe = "1.7.7-13-gbbcbb51c1"
 data_git_msg = """\
-commit 7a3c2973a5cac20b01a9dd683198147d71547460
+commit bbcbb51c17bc9afbae9e1683ac4c7b3e740bf2c8
 Author: Keith Packard <keithp@keithp.com>
-Date:   Sun Jun 19 11:31:52 2022 -0700
+Date:   Tue Jun 21 14:09:49 2022 -0700
 
-    .github: Test all available cmake configurations
+    test: Add test for malloc(PTRDIFF_MAX)
     
-    Make sure the library is built correctly in all modes.
+    This can have a different failure mode than malloc(SIZE_MAX), so test
+    it explicitly
     
     Signed-off-by: Keith Packard <keithp@keithp.com>
 
