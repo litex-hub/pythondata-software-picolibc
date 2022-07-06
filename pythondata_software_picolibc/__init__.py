@@ -4,32 +4,33 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "1.7.7.post156"
-version_tuple = (1, 7, 7, 156)
+version_str = "1.7.7.post158"
+version_tuple = (1, 7, 7, 158)
 try:
     from packaging.version import Version as V
-    pversion = V("1.7.7.post156")
+    pversion = V("1.7.7.post158")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "1.7.7.post14"
-data_version_tuple = (1, 7, 7, 14)
+data_version_str = "1.7.7.post16"
+data_version_tuple = (1, 7, 7, 16)
 try:
     from packaging.version import Version as V
-    pdata_version = V("1.7.7.post14")
+    pdata_version = V("1.7.7.post16")
 except ImportError:
     pass
-data_git_hash = "e87b2fc37345a62361478f0a6efd140e14180ba5"
-data_git_describe = "1.7.7-14-ge87b2fc37"
+data_git_hash = "ce7bd3ba2761497ba380cb131d1493eb7c2bcaab"
+data_git_describe = "1.7.7-16-gce7bd3ba2"
 data_git_msg = """\
-commit e87b2fc37345a62361478f0a6efd140e14180ba5
+commit ce7bd3ba2761497ba380cb131d1493eb7c2bcaab
 Author: Keith Packard <keithp@keithp.com>
-Date:   Wed Jun 22 11:08:35 2022 -0700
+Date:   Fri Jun 24 17:10:05 2022 -0700
 
-    cmake: Allow setting of __PICOLIBC_ERRNO_FUNCTION
+    Add basic arc/arc64 support
     
-    This is needed for non-TLS builds of Zephyr.
+    Add meson and cmake scripts for the machine-specific 32-bit arc code.
+    Add scripts to build using the Zephyr toolchain.
     
     Signed-off-by: Keith Packard <keithp@keithp.com>
 
