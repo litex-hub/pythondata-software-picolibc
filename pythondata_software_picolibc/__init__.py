@@ -4,33 +4,33 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "1.7.7.post158"
-version_tuple = (1, 7, 7, 158)
+version_str = "1.7.8.post173"
+version_tuple = (1, 7, 8, 173)
 try:
     from packaging.version import Version as V
-    pversion = V("1.7.7.post158")
+    pversion = V("1.7.8.post173")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "1.7.7.post16"
-data_version_tuple = (1, 7, 7, 16)
+data_version_str = "1.7.8.post31"
+data_version_tuple = (1, 7, 8, 31)
 try:
     from packaging.version import Version as V
-    pdata_version = V("1.7.7.post16")
+    pdata_version = V("1.7.8.post31")
 except ImportError:
     pass
-data_git_hash = "ce7bd3ba2761497ba380cb131d1493eb7c2bcaab"
-data_git_describe = "1.7.7-16-gce7bd3ba2"
+data_git_hash = "569e2895a300237c5aae75c78c79daa74b09a11a"
+data_git_describe = "1.7.8-31-g569e2895a"
 data_git_msg = """\
-commit ce7bd3ba2761497ba380cb131d1493eb7c2bcaab
+commit 569e2895a300237c5aae75c78c79daa74b09a11a
 Author: Keith Packard <keithp@keithp.com>
-Date:   Fri Jun 24 17:10:05 2022 -0700
+Date:   Fri Aug 26 16:39:18 2022 -0700
 
-    Add basic arc/arc64 support
+    .github: Test non-picoexit configuration
     
-    Add meson and cmake scripts for the machine-specific 32-bit arc code.
-    Add scripts to build using the Zephyr toolchain.
+    Looks like there's a bug here, so let's test it and make sure it fails before
+    adding a fix.
     
     Signed-off-by: Keith Packard <keithp@keithp.com>
 
