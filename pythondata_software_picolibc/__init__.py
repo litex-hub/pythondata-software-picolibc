@@ -4,30 +4,32 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "1.7.8.post480"
-version_tuple = (1, 7, 8, 480)
+version_str = "1.7.8.post483"
+version_tuple = (1, 7, 8, 483)
 try:
     from packaging.version import Version as V
-    pversion = V("1.7.8.post480")
+    pversion = V("1.7.8.post483")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "1.7.8.post338"
-data_version_tuple = (1, 7, 8, 338)
+data_version_str = "1.7.8.post341"
+data_version_tuple = (1, 7, 8, 341)
 try:
     from packaging.version import Version as V
-    pdata_version = V("1.7.8.post338")
+    pdata_version = V("1.7.8.post341")
 except ImportError:
     pass
-data_git_hash = "7beed395a06b5a977dfa4cdcfc13ee4fe8685a71"
-data_git_describe = "1.7.8-338-g7beed395a"
+data_git_hash = "2508101bf38b09c5255798107b59ee2bc7474f69"
+data_git_describe = "1.7.8-341-g2508101bf"
 data_git_msg = """\
-commit 7beed395a06b5a977dfa4cdcfc13ee4fe8685a71
+commit 2508101bf38b09c5255798107b59ee2bc7474f69
 Author: Keith Packard <keithp@keithp.com>
-Date:   Tue Oct 4 17:41:43 2022 -0700
+Date:   Sat Oct 8 16:59:41 2022 -0700
 
-    .github: Test x86_64 and multi-lib x86 builds
+    .github: List installed packages
+    
+    Try to debug libgcc errors
     
     Signed-off-by: Keith Packard <keithp@keithp.com>
 
