@@ -4,35 +4,30 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "1.7.8.post526"
-version_tuple = (1, 7, 8, 526)
+version_str = "1.7.8.post532"
+version_tuple = (1, 7, 8, 532)
 try:
     from packaging.version import Version as V
-    pversion = V("1.7.8.post526")
+    pversion = V("1.7.8.post532")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "1.7.8.post384"
-data_version_tuple = (1, 7, 8, 384)
+data_version_str = "1.7.8.post390"
+data_version_tuple = (1, 7, 8, 390)
 try:
     from packaging.version import Version as V
-    pdata_version = V("1.7.8.post384")
+    pdata_version = V("1.7.8.post390")
 except ImportError:
     pass
-data_git_hash = "3e7c697478ecd4575056d7373ed947ded1eddf8e"
-data_git_describe = "1.7.8-384-g3e7c69747"
+data_git_hash = "2deb044719eec0e79b5d1bf40e5c4cde0a94a2e8"
+data_git_describe = "1.7.8-390-g2deb04471"
 data_git_msg = """\
-commit 3e7c697478ecd4575056d7373ed947ded1eddf8e
+commit 2deb044719eec0e79b5d1bf40e5c4cde0a94a2e8
 Author: Keith Packard <keithp@keithp.com>
-Date:   Wed Oct 5 10:14:36 2022 -0700
+Date:   Mon Oct 10 09:36:37 2022 -0700
 
-    x86: Build only one bios.bin version. Use -nostdlib
-    
-    Instead of creating per-target bios.bin files, each of which is
-    identical, create just one.
-    
-    Use -nostdlib instead of -nostartfiles to avoid requiring libc and libgcc
+    .github: Build nios2
     
     Signed-off-by: Keith Packard <keithp@keithp.com>
 
