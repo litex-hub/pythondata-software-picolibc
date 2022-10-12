@@ -4,30 +4,30 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "1.7.8.post532"
-version_tuple = (1, 7, 8, 532)
+version_str = "1.7.9.post142"
+version_tuple = (1, 7, 9, 142)
 try:
     from packaging.version import Version as V
-    pversion = V("1.7.8.post532")
+    pversion = V("1.7.9.post142")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "1.7.8.post390"
-data_version_tuple = (1, 7, 8, 390)
+data_version_str = "1.7.9.post0"
+data_version_tuple = (1, 7, 9, 0)
 try:
     from packaging.version import Version as V
-    pdata_version = V("1.7.8.post390")
+    pdata_version = V("1.7.9.post0")
 except ImportError:
     pass
-data_git_hash = "2deb044719eec0e79b5d1bf40e5c4cde0a94a2e8"
-data_git_describe = "1.7.8-390-g2deb04471"
+data_git_hash = "b92edfda8ac6853772d87cadaeeeaa21b78609b6"
+data_git_describe = "1.7.9-0-gb92edfda8"
 data_git_msg = """\
-commit 2deb044719eec0e79b5d1bf40e5c4cde0a94a2e8
+commit b92edfda8ac6853772d87cadaeeeaa21b78609b6
 Author: Keith Packard <keithp@keithp.com>
-Date:   Mon Oct 10 09:36:37 2022 -0700
+Date:   Mon Oct 10 22:04:40 2022 -0700
 
-    .github: Build nios2
+    Version 1.7.9
     
     Signed-off-by: Keith Packard <keithp@keithp.com>
 
