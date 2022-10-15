@@ -4,30 +4,34 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "1.7.9.post142"
-version_tuple = (1, 7, 9, 142)
+version_str = "1.7.9.post146"
+version_tuple = (1, 7, 9, 146)
 try:
     from packaging.version import Version as V
-    pversion = V("1.7.9.post142")
+    pversion = V("1.7.9.post146")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "1.7.9.post0"
-data_version_tuple = (1, 7, 9, 0)
+data_version_str = "1.7.9.post4"
+data_version_tuple = (1, 7, 9, 4)
 try:
     from packaging.version import Version as V
-    pdata_version = V("1.7.9.post0")
+    pdata_version = V("1.7.9.post4")
 except ImportError:
     pass
-data_git_hash = "b92edfda8ac6853772d87cadaeeeaa21b78609b6"
-data_git_describe = "1.7.9-0-gb92edfda8"
+data_git_hash = "481c4b5ac4781d2fbba8c1cf66fe7da48d4a831b"
+data_git_describe = "1.7.9-4-g481c4b5ac"
 data_git_msg = """\
-commit b92edfda8ac6853772d87cadaeeeaa21b78609b6
+commit 481c4b5ac4781d2fbba8c1cf66fe7da48d4a831b
 Author: Keith Packard <keithp@keithp.com>
-Date:   Mon Oct 10 22:04:40 2022 -0700
+Date:   Thu Oct 13 23:17:49 2022 -0700
 
-    Version 1.7.9
+    cmake: Skip asm code on arcv3
+    
+    The accelerated asm code only works on older arc targets, just use the
+    C code versions on new hardware. This already worked with meson, which
+    checks a CPP symbol. The cmake bits use CONFIG values instead.
     
     Signed-off-by: Keith Packard <keithp@keithp.com>
 
