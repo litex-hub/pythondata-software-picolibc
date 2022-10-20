@@ -4,32 +4,33 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "1.7.9.post152"
-version_tuple = (1, 7, 9, 152)
+version_str = "1.7.9.post153"
+version_tuple = (1, 7, 9, 153)
 try:
     from packaging.version import Version as V
-    pversion = V("1.7.9.post152")
+    pversion = V("1.7.9.post153")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "1.7.9.post10"
-data_version_tuple = (1, 7, 9, 10)
+data_version_str = "1.7.9.post11"
+data_version_tuple = (1, 7, 9, 11)
 try:
     from packaging.version import Version as V
-    pdata_version = V("1.7.9.post10")
+    pdata_version = V("1.7.9.post11")
 except ImportError:
     pass
-data_git_hash = "8a98d4d6b5c9ae43d6a980bfd5678fe88fbdf35c"
-data_git_describe = "1.7.9-10-g8a98d4d6b"
+data_git_hash = "67574211585540c048ccc5df5f46a37055e2eb5d"
+data_git_describe = "1.7.9-11-g675742115"
 data_git_msg = """\
-commit 8a98d4d6b5c9ae43d6a980bfd5678fe88fbdf35c
-Author: Keith Packard <keithp@keithp.com>
-Date:   Wed Oct 19 10:33:39 2022 -0700
+commit 67574211585540c048ccc5df5f46a37055e2eb5d
+Author: Troels Jessen <troels@space-inventor.com>
+Date:   Fri Sep 30 09:48:00 2022 +0200
 
-    xtensa: Add _set_tls helper
+    Remove double underscores in defines
     
-    Signed-off-by: Keith Packard <keithp@keithp.com>
+    Defines with double underscores does not exist for all compilers,
+    causing environment to default to big endian
 
 """
 
