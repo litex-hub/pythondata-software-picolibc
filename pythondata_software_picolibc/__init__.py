@@ -4,36 +4,35 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "1.7.9.post156"
-version_tuple = (1, 7, 9, 156)
+version_str = "1.7.9.post159"
+version_tuple = (1, 7, 9, 159)
 try:
     from packaging.version import Version as V
-    pversion = V("1.7.9.post156")
+    pversion = V("1.7.9.post159")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "1.7.9.post14"
-data_version_tuple = (1, 7, 9, 14)
+data_version_str = "1.7.9.post17"
+data_version_tuple = (1, 7, 9, 17)
 try:
     from packaging.version import Version as V
-    pdata_version = V("1.7.9.post14")
+    pdata_version = V("1.7.9.post17")
 except ImportError:
     pass
-data_git_hash = "c32f242ea9e636c48b0189d0f4c4f127d2263dd0"
-data_git_describe = "1.7.9-14-gc32f242ea"
+data_git_hash = "85cdb583c54ca1ab589f92d99648b609b05c7a44"
+data_git_describe = "1.7.9-17-g85cdb583c"
 data_git_msg = """\
-commit c32f242ea9e636c48b0189d0f4c4f127d2263dd0
-Author: David Green <david.green@arm.com>
-Date:   Wed Oct 19 21:26:16 2022 +0100
+commit 85cdb583c54ca1ab589f92d99648b609b05c7a44
+Author: Keith Packard <keithp@keithp.com>
+Date:   Thu Oct 20 18:38:08 2022 -0700
 
-    [ARM] Fix FPSCR initial state for Arm8.1-M low overhead loops.
+    Provide a 'zephyr' mode for errno-function
     
-    The Arm8.1-m architecture added Low Overhead Loops and tail predication,
-    controlled by the LTPSIZE bits of FPSCR. Unfortunately 0 is an invalid
-    value, with values other than 0x4 causing an LE instructions to throw a
-    UsageFault. This alters the initial reset value in _start to 0x40000 to
-    ensure it is initialized correctly.
+    Select z_errno_wrap when picolibc is configured without thread local
+    storage support. Otherwise, place errno in a TLS variable.
+    
+    Signed-off-by: Keith Packard <keithp@keithp.com>
 
 """
 
