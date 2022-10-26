@@ -4,34 +4,35 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "1.7.9.post165"
-version_tuple = (1, 7, 9, 165)
+version_str = "1.7.9.post169"
+version_tuple = (1, 7, 9, 169)
 try:
     from packaging.version import Version as V
-    pversion = V("1.7.9.post165")
+    pversion = V("1.7.9.post169")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "1.7.9.post23"
-data_version_tuple = (1, 7, 9, 23)
+data_version_str = "1.7.9.post27"
+data_version_tuple = (1, 7, 9, 27)
 try:
     from packaging.version import Version as V
-    pdata_version = V("1.7.9.post23")
+    pdata_version = V("1.7.9.post27")
 except ImportError:
     pass
-data_git_hash = "16a3a470be97e01d3edd3b5161fcb350c5a71681"
-data_git_describe = "1.7.9-23-g16a3a470b"
+data_git_hash = "3cbe38c7914a305e1e7282b5ae4eab706b39db63"
+data_git_describe = "1.7.9-27-g3cbe38c79"
 data_git_msg = """\
-commit 16a3a470be97e01d3edd3b5161fcb350c5a71681
-Author: Ryan McClelland <ryanmcclelland@meta.com>
-Date:   Mon Oct 24 00:25:24 2022 -0700
+commit 3cbe38c7914a305e1e7282b5ae4eab706b39db63
+Author: Keith Packard <keithp@keithp.com>
+Date:   Mon Oct 24 09:12:51 2022 -0700
 
-    fix -Werror=double-promotion issues
+    Add -Werror=double-promotion to default warning set
     
-    When compiling with the gcc flag -Werror=double-promotion.
-    Three errors are given which are implicit conversion from float
-    to double to match other result of the conditional
+    This will catch places where computations are forced to double instead
+    of being done in float, often due to a constant lacking a trailing 'f'.
+    
+    Signed-off-by: Keith Packard <keithp@keithp.com>
 
 """
 
