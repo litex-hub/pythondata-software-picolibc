@@ -4,33 +4,33 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "1.7.9.post169"
-version_tuple = (1, 7, 9, 169)
+version_str = "1.7.9.post177"
+version_tuple = (1, 7, 9, 177)
 try:
     from packaging.version import Version as V
-    pversion = V("1.7.9.post169")
+    pversion = V("1.7.9.post177")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "1.7.9.post27"
-data_version_tuple = (1, 7, 9, 27)
+data_version_str = "1.7.9.post35"
+data_version_tuple = (1, 7, 9, 35)
 try:
     from packaging.version import Version as V
-    pdata_version = V("1.7.9.post27")
+    pdata_version = V("1.7.9.post35")
 except ImportError:
     pass
-data_git_hash = "3cbe38c7914a305e1e7282b5ae4eab706b39db63"
-data_git_describe = "1.7.9-27-g3cbe38c79"
+data_git_hash = "d1bf7cdb736399c2e8fd182f1eb887b2d2e471a2"
+data_git_describe = "1.7.9-35-gd1bf7cdb7"
 data_git_msg = """\
-commit 3cbe38c7914a305e1e7282b5ae4eab706b39db63
+commit d1bf7cdb736399c2e8fd182f1eb887b2d2e471a2
 Author: Keith Packard <keithp@keithp.com>
-Date:   Mon Oct 24 09:12:51 2022 -0700
+Date:   Mon Oct 31 18:17:18 2022 -0700
 
-    Add -Werror=double-promotion to default warning set
+    tinystdio: Add strto*l_l functions
     
-    This will catch places where computations are forced to double instead
-    of being done in float, often due to a constant lacking a trailing 'f'.
+    These take a locale pointer, which is ignored. Used by
+    strptime.
     
     Signed-off-by: Keith Packard <keithp@keithp.com>
 
