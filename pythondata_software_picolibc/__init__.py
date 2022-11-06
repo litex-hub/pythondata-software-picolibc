@@ -4,33 +4,34 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "1.7.9.post180"
-version_tuple = (1, 7, 9, 180)
+version_str = "1.7.9.post181"
+version_tuple = (1, 7, 9, 181)
 try:
     from packaging.version import Version as V
-    pversion = V("1.7.9.post180")
+    pversion = V("1.7.9.post181")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "1.7.9.post38"
-data_version_tuple = (1, 7, 9, 38)
+data_version_str = "1.7.9.post39"
+data_version_tuple = (1, 7, 9, 39)
 try:
     from packaging.version import Version as V
-    pdata_version = V("1.7.9.post38")
+    pdata_version = V("1.7.9.post39")
 except ImportError:
     pass
-data_git_hash = "07e942e8446cf3d47f9fd3b2ec33c1d39207b978"
-data_git_describe = "1.7.9-38-g07e942e84"
+data_git_hash = "f165dc22f1f67e3e8bdc8edf750ff7dc596de2ff"
+data_git_describe = "1.7.9-39-gf165dc22f"
 data_git_msg = """\
-commit 07e942e8446cf3d47f9fd3b2ec33c1d39207b978
+commit f165dc22f1f67e3e8bdc8edf750ff7dc596de2ff
 Author: Keith Packard <keithp@keithp.com>
-Date:   Fri Nov 4 16:38:35 2022 -0700
+Date:   Sat Nov 5 19:30:51 2022 -0700
 
-    test: Switch from unlink to remove
+    Switch read/write to posix types
     
-    Use the ISO C API instead of the POSIX one to test
-    our internal implementation.
+    Remove legacy cygwin hacks which set the buffer size and return value
+    for read and write to int, switch them to the correct POSIX types,
+    size_t for buffer size and ssize_t for the return value.
     
     Signed-off-by: Keith Packard <keithp@keithp.com>
 
