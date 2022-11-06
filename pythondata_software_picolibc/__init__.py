@@ -4,33 +4,33 @@ data_location = os.path.join(__dir__, "data")
 src = "https://github.com/picolibc/picolibc"
 
 # Module version
-version_str = "1.7.9.post177"
-version_tuple = (1, 7, 9, 177)
+version_str = "1.7.9.post180"
+version_tuple = (1, 7, 9, 180)
 try:
     from packaging.version import Version as V
-    pversion = V("1.7.9.post177")
+    pversion = V("1.7.9.post180")
 except ImportError:
     pass
 
 # Data version info
-data_version_str = "1.7.9.post35"
-data_version_tuple = (1, 7, 9, 35)
+data_version_str = "1.7.9.post38"
+data_version_tuple = (1, 7, 9, 38)
 try:
     from packaging.version import Version as V
-    pdata_version = V("1.7.9.post35")
+    pdata_version = V("1.7.9.post38")
 except ImportError:
     pass
-data_git_hash = "d1bf7cdb736399c2e8fd182f1eb887b2d2e471a2"
-data_git_describe = "1.7.9-35-gd1bf7cdb7"
+data_git_hash = "07e942e8446cf3d47f9fd3b2ec33c1d39207b978"
+data_git_describe = "1.7.9-38-g07e942e84"
 data_git_msg = """\
-commit d1bf7cdb736399c2e8fd182f1eb887b2d2e471a2
+commit 07e942e8446cf3d47f9fd3b2ec33c1d39207b978
 Author: Keith Packard <keithp@keithp.com>
-Date:   Mon Oct 31 18:17:18 2022 -0700
+Date:   Fri Nov 4 16:38:35 2022 -0700
 
-    tinystdio: Add strto*l_l functions
+    test: Switch from unlink to remove
     
-    These take a locale pointer, which is ignored. Used by
-    strptime.
+    Use the ISO C API instead of the POSIX one to test
+    our internal implementation.
     
     Signed-off-by: Keith Packard <keithp@keithp.com>
 
