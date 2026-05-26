@@ -1,9 +1,16 @@
+import re
+
 import setuptools
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-from pythondata_software_picolibc import version_str
+with open("pythondata_software_picolibc/__init__.py", "r") as fh:
+    version_str = re.search(
+        r'^version_str = "([^"]+)"',
+        fh.read(),
+        re.MULTILINE,
+    ).group(1)
 
 setuptools.setup(
     name="pythondata-software-picolibc",
@@ -24,7 +31,7 @@ Python module containing data files for picolibc - a C library designed for embe
     zip_safe=False,
     packages=setuptools.find_packages(),
     package_data={
-    	'software_picolibc': ['software_picolibc/data/**'],
+        'pythondata_software_picolibc': ['data/**'],
     },
     include_package_data=True,
     project_urls={
