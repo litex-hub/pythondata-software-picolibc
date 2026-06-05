@@ -1,4 +1,4 @@
 [submodule "pythondata_software_picolibc/data"]
 	path = pythondata_software_picolibc/data
-	url = https://github.com/picolibc/picolibc
-	branch = main
+	url = https://github.com/litex-hub/picolibc
+	branch = litex-ppc-cpu-family-alias
